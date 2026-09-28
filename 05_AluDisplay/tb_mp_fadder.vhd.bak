@@ -1,0 +1,57 @@
+`timescale 10ns/1ns
+
+// Code your testbench here
+// or browse Examples
+
+
+module adder8b_tb();
+  
+  localparam ADDER_SIZE = 20;
+  
+  reg  [ADDER_SIZE-1:0] a,b;
+  wire [ADDER_SIZE-1:0] s;
+  wire       co;
+  //reg  [7:0] s_d;
+  //reg  [7:0] s_l;
+  
+  
+  adder_nb #(
+    .NUM_BITS(ADDER_SIZE)
+  ) dut (
+    .a(a),
+    .b(b),
+    .ci(1'b0),
+    .co(co),
+    .s(s)
+  );  
+    
+  initial begin
+    {b,a} = 0;
+    $display("Init {a,b} = 0");
+    forever begin
+      #1
+      if ((a+b) !== {co,s}) 
+        $display("@%0d ERROR - a (%0d) + b (%0d) != {co,s} (%0d)",$time,a,b,{co,s});
+      else 
+        $display("@%0d - a (%0d) + b (%0d) != {co,s} (%0d)",$time,a,b,{co,s});
+      
+      #1 
+      {b,a} = {b,a}+1;
+      
+      if ({b,a} == 0) #2 $finish();
+    end
+  end
+
+//  always @* s_l = #3 s;
+  //  always @* s_d = repeat(3) //@(posedge a[0]) s_l;
+  
+  // Process to dump waves and finish sim
+  initial begin
+    $dumpfile("dump.vcd"); 
+    $dumpvars;
+    #260000 $finish();    
+  end  
+  
+  
+endmodule
+

@@ -1,0 +1,17 @@
+module mux4to1(
+	input	wire iw_dataA,
+	input	wire iw_dataB,
+	input	wire iw_dataC,
+	input	wire iw_dataD,
+	input	wire [1:0] iw_sel,
+	output or_muxout
+);
+
+wire w_m;
+wire w_n
+
+mux2to1_i0(.iw_dataA(iw_dataA),.iw_dataB(iw_dataB),.iw_sel(iw_sel[0]),.or_muxout(w_m))
+mux2to1_i1= mux2to1(.iw_dataA(iw_dataA),.iw_dataB(iw_dataB),.iw_sel(iw_sel[0]),.or_muxout(w_n))
+mux2to1_i2= mux2to1(.iw_dataA(iw_dataA),.iw_dataB(iw_dataB),.iw_sel(iw_sel[1]),.or_muxout(or_muxout))
+
+endmodule

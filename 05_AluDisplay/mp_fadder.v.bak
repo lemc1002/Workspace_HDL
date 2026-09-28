@@ -1,0 +1,56 @@
+module mp_fadder #(parameter NUM_BITS = 4)(
+	input  [N-1:00]	ivDataA,
+	input  [N-1:00]	ivDataB,
+	input 		  		iCin,
+	output [N-1:00]	ovpSumOut,
+	output 				oCout
+	
+);
+
+  wire [NUM_BITS:0] wvCarrie;
+  //wire [NUM_BITS-1:0] b_b;
+  
+  assign wvCarrie[0] = iCin;
+    
+  genvar i;
+  generate
+    for (i=0;i<NUM_BITS;i=i+1) begin : adder_loop
+      fadder fa_i(.ivDataA(ivDataA[i]),.ivDataB(ivDataB[i]),.iCin(wvCarrie[i]),.ovpSumOut(ovpSumOut[i]),.oCout(wvCarrie[i+1]));
+    end
+  endgenerate
+  
+  assign oCout = wvCarrie[NUM_BITS];
+ 
+ endmodule
+ 
+   //wire [6:0] c;
+  //full_adder (input a,b,ci, output s,co );
+  //full_adder fa_i0(a[0],b[0],1'b0,s[0],c[0]);
+  //full_adder fa_i1(a[1],b[1],c[0],s[1],c[1]);
+  //full_adder fa_i2(a[2],b[2],c[1],s[2],c[2]);
+  //full_adder fa_i3(a[3],b[3],c[2],s[3],c[3]);
+  //full_adder fa_i4(a[4],b[4],c[3],s[4],c[4]);
+  //full_adder fa_i5(a[5],b[5],c[4],s[5],c[5]);
+  //full_adder fa_i6(a[6],b[6],c[5],s[6],c[6]);
+  //full_adder fa_i7(a[7],b[7],c[6],s[7],co);
+
+  //wire [8:0] c;
+  //assign c[0] = 1'b0;
+  //full_adder fa_i0(a[0],b[0],c[0],s[0],c[1]);
+  //full_adder fa_i1(a[1],b[1],c[1],s[1],c[2]);
+  //full_adder fa_i2(a[2],b[2],c[2],s[2],c[3]);
+  //full_adder fa_i3(a[3],b[3],c[3],s[3],c[4]);
+  //full_adder fa_i4(a[4],b[4],c[4],s[4],c[5]);
+  //full_adder fa_i5(a[5],b[5],c[5],s[5],c[6]);
+  //full_adder fa_i6(a[6],b[6],c[6],s[6],c[7]);
+  //full_adder fa_i7(a[7],b[7],c[7],s[7],c[8]);
+  //assign co = c[8];
+  
+  //wire [8:0] c;
+  //assign c[0] = 1'b0;
+  //genvar i;
+  //generate
+  //  for (i=0;i<8;i=i+1)
+  //    full_adder fa_i(a[i],b[i],c[i],s[i],c[i+1]);
+  //endgenerate
+  //assign co = c[8];

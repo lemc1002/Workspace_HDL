@@ -1,0 +1,35 @@
+// Code your testbench here
+// or browse Examples
+
+module mux4a_tb();
+  
+  reg a,b,c,d;
+  reg [1:0] sel;
+  wire z;
+  
+  mux4a1 dut(a,b,c,d,sel,z);
+  
+  
+  // Aqui hacemos drive de las entradas
+  initial begin
+    #10;
+    {sel,d,c,b,a} = 6'h0; // Le asigno 6b en hexadecimal 0 a las entradas
+    
+    forever begin
+      #10 {sel,d,c,b,a}={sel,d,c,b,a}+6'h1;
+      
+      // Detenemos la sim al volver a iniciar las combinaciones
+      if ({sel,d,c,b,a}==6'h0) $stop;
+      
+    end
+  end 
+  
+  
+  // Para generar formas de onda
+  initial begin
+    $dumpfile("dump.vcd"); 
+    $dumpvars;
+  end
+   
+ 
+endmodule

@@ -1,0 +1,10 @@
+module bin2bcd#(parameter = NUM_BITS)
+(
+	input 
+	
+	output [15:12]	oT
+	output [11:08]	oH
+	output [07:04]	oD
+	output [03:00]	oU
+);
+

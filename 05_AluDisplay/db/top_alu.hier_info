@@ -1,0 +1,717 @@
+|top_alu
+SW[0] => wvDataA[0].IN1
+SW[1] => wvDataA[1].IN1
+SW[2] => wvDataA[2].IN1
+SW[3] => wvDataA[3].IN1
+SW[4] => wvDataA[4].IN1
+SW[5] => wvDataB[0].IN1
+SW[6] => wvDataB[1].IN1
+SW[7] => wvDataB[2].IN1
+SW[8] => wvDataB[3].IN1
+SW[9] => wvDataB[4].IN1
+KEY[0] => _.IN1
+KEY[1] => _.IN1
+KEY[2] => WideNand0.IN0
+KEY[2] => WideNand1.IN0
+KEY[2] => WideNand2.IN0
+KEY[2] => WideNand3.IN0
+KEY[2] => WideNand4.IN0
+KEY[2] => _.IN1
+KEY[3] => WideNand0.IN1
+KEY[3] => WideNand1.IN1
+KEY[3] => WideNand2.IN1
+KEY[3] => WideNand3.IN1
+KEY[3] => WideNand4.IN1
+KEY[3] => _.IN1
+LEDR[0] <= wvMuxOut[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= wvMuxOut[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= wvMuxOut[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= wvMuxOut[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= wvMuxOut[4].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= <GND>
+LEDR[6] <= mALUlogic:mALU_i0.oZero
+LEDR[7] <= mALUlogic:mALU_i0.oCout
+LEDR[8] <= mALUlogic:mALU_i0.oNegative
+LEDR[9] <= mALUlogic:mALU_i0.oOvf
+HEX0[0] <= m7SegDisp:m7segU.ov7Seg
+HEX0[1] <= m7SegDisp:m7segU.ov7Seg
+HEX0[2] <= m7SegDisp:m7segU.ov7Seg
+HEX0[3] <= m7SegDisp:m7segU.ov7Seg
+HEX0[4] <= m7SegDisp:m7segU.ov7Seg
+HEX0[5] <= m7SegDisp:m7segU.ov7Seg
+HEX0[6] <= m7SegDisp:m7segU.ov7Seg
+HEX1[0] <= m7SegDisp:m7segD.ov7Seg
+HEX1[1] <= m7SegDisp:m7segD.ov7Seg
+HEX1[2] <= m7SegDisp:m7segD.ov7Seg
+HEX1[3] <= m7SegDisp:m7segD.ov7Seg
+HEX1[4] <= m7SegDisp:m7segD.ov7Seg
+HEX1[5] <= m7SegDisp:m7segD.ov7Seg
+HEX1[6] <= m7SegDisp:m7segD.ov7Seg
+HEX2[0] <= m7SegDisp:m7segH.ov7Seg
+HEX2[1] <= m7SegDisp:m7segH.ov7Seg
+HEX2[2] <= m7SegDisp:m7segH.ov7Seg
+HEX2[3] <= m7SegDisp:m7segH.ov7Seg
+HEX2[4] <= m7SegDisp:m7segH.ov7Seg
+HEX2[5] <= m7SegDisp:m7segH.ov7Seg
+HEX2[6] <= m7SegDisp:m7segH.ov7Seg
+HEX3[0] <= m7SegDisp:m7segT.ov7Seg
+HEX3[1] <= m7SegDisp:m7segT.ov7Seg
+HEX3[2] <= m7SegDisp:m7segT.ov7Seg
+HEX3[3] <= m7SegDisp:m7segT.ov7Seg
+HEX3[4] <= m7SegDisp:m7segT.ov7Seg
+HEX3[5] <= m7SegDisp:m7segT.ov7Seg
+HEX3[6] <= m7SegDisp:m7segT.ov7Seg
+HEX4[0] <= m7SegDisp:m7segDT.ov7Seg
+HEX4[1] <= m7SegDisp:m7segDT.ov7Seg
+HEX4[2] <= m7SegDisp:m7segDT.ov7Seg
+HEX4[3] <= m7SegDisp:m7segDT.ov7Seg
+HEX4[4] <= m7SegDisp:m7segDT.ov7Seg
+HEX4[5] <= m7SegDisp:m7segDT.ov7Seg
+HEX4[6] <= m7SegDisp:m7segDT.ov7Seg
+HEX5[0] <= <VCC>
+HEX5[1] <= <VCC>
+HEX5[2] <= <VCC>
+HEX5[3] <= <VCC>
+HEX5[4] <= <VCC>
+HEX5[5] <= <VCC>
+HEX5[6] <= mALUlogic:mALU_i0.oNegative
+
+
+|top_alu|mALUlogic:mALU_i0
+ivDataA[0] => ivDataA[0].IN1
+ivDataA[1] => ivDataA[1].IN1
+ivDataA[2] => ivDataA[2].IN1
+ivDataA[3] => ivDataA[3].IN1
+ivDataA[4] => ivDataA[4].IN1
+ivDataB[0] => comb.DATAA
+ivDataB[0] => Mult0.IN9
+ivDataB[0] => comb.IN0
+ivDataB[0] => comb.IN0
+ivDataB[0] => comb.IN0
+ivDataB[0] => ShiftLeft0.IN10
+ivDataB[0] => ShiftRight0.IN10
+ivDataB[0] => comb.DATAB
+ivDataB[0] => Add0.IN10
+ivDataB[1] => comb.DATAA
+ivDataB[1] => Mult0.IN8
+ivDataB[1] => comb.IN0
+ivDataB[1] => comb.IN0
+ivDataB[1] => comb.IN0
+ivDataB[1] => ShiftLeft0.IN9
+ivDataB[1] => ShiftRight0.IN9
+ivDataB[1] => comb.DATAB
+ivDataB[1] => Add0.IN9
+ivDataB[2] => comb.DATAA
+ivDataB[2] => Mult0.IN7
+ivDataB[2] => comb.IN0
+ivDataB[2] => comb.IN0
+ivDataB[2] => comb.IN0
+ivDataB[2] => ShiftLeft0.IN8
+ivDataB[2] => ShiftRight0.IN8
+ivDataB[2] => comb.DATAB
+ivDataB[2] => Add0.IN8
+ivDataB[3] => comb.DATAA
+ivDataB[3] => Mult0.IN6
+ivDataB[3] => comb.IN0
+ivDataB[3] => comb.IN0
+ivDataB[3] => comb.IN0
+ivDataB[3] => ShiftLeft0.IN7
+ivDataB[3] => ShiftRight0.IN7
+ivDataB[3] => comb.DATAB
+ivDataB[3] => Add0.IN7
+ivDataB[4] => comb.DATAA
+ivDataB[4] => Mult0.IN5
+ivDataB[4] => comb.IN0
+ivDataB[4] => comb.IN0
+ivDataB[4] => comb.IN0
+ivDataB[4] => ShiftLeft0.IN6
+ivDataB[4] => ShiftRight0.IN6
+ivDataB[4] => comb.DATAB
+ivDataB[4] => Add0.IN6
+ivSel[0] => ivSel[0].IN2
+ivSel[1] => ivSel[1].IN1
+ivSel[2] => ivSel[2].IN1
+ivSel[3] => ivSel[3].IN1
+ovMuxOut[0] <= mux16to1:mainMux.ovMuxout
+ovMuxOut[1] <= mux16to1:mainMux.ovMuxout
+ovMuxOut[2] <= mux16to1:mainMux.ovMuxout
+ovMuxOut[3] <= mux16to1:mainMux.ovMuxout
+ovMuxOut[4] <= mux16to1:mainMux.ovMuxout
+oCout <= mp_fadder:signedSumSub.oCout
+oOvf <= mp_fadder:signedSumSub.oOvf
+oNegative <= mp_fadder:signedSumSub.oNeg
+oZero <= mp_fadder:signedSumSub.oZero
+
+
+|top_alu|mALUlogic:mALU_i0|mp_fadder:signedSumSub
+ivDataA[0] => ivDataA[0].IN1
+ivDataA[1] => ivDataA[1].IN1
+ivDataA[2] => ivDataA[2].IN1
+ivDataA[3] => ivDataA[3].IN1
+ivDataA[4] => ivDataA[4].IN1
+ivDataB[0] => ivDataB[0].IN1
+ivDataB[1] => ivDataB[1].IN1
+ivDataB[2] => ivDataB[2].IN1
+ivDataB[3] => ivDataB[3].IN1
+ivDataB[4] => ivDataB[4].IN1
+iCin => wvCarrie[0].IN1
+ovpSumOut[0] <= m_fadder:adder_loop[0].fa_i.ovpSumOut
+ovpSumOut[1] <= m_fadder:adder_loop[1].fa_i.ovpSumOut
+ovpSumOut[2] <= m_fadder:adder_loop[2].fa_i.ovpSumOut
+ovpSumOut[3] <= m_fadder:adder_loop[3].fa_i.ovpSumOut
+ovpSumOut[4] <= m_fadder:adder_loop[4].fa_i.ovpSumOut
+oCout <= m_fadder:adder_loop[4].fa_i.oCout
+oOvf <= oOvf.DB_MAX_OUTPUT_PORT_TYPE
+oNeg <= m_fadder:adder_loop[4].fa_i.ovpSumOut
+oZero <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mp_fadder:signedSumSub|m_fadder:adder_loop[0].fa_i
+ivpDataA => ovpSumOut.IN0
+ivpDataA => oCout.IN0
+ivpDataA => oCout.IN0
+ivpDataB => ovpSumOut.IN1
+ivpDataB => oCout.IN1
+ivpDataB => oCout.IN0
+iCin => ovpSumOut.IN1
+iCin => oCout.IN1
+iCin => oCout.IN1
+ovpSumOut <= ovpSumOut.DB_MAX_OUTPUT_PORT_TYPE
+oCout <= oCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mp_fadder:signedSumSub|m_fadder:adder_loop[1].fa_i
+ivpDataA => ovpSumOut.IN0
+ivpDataA => oCout.IN0
+ivpDataA => oCout.IN0
+ivpDataB => ovpSumOut.IN1
+ivpDataB => oCout.IN1
+ivpDataB => oCout.IN0
+iCin => ovpSumOut.IN1
+iCin => oCout.IN1
+iCin => oCout.IN1
+ovpSumOut <= ovpSumOut.DB_MAX_OUTPUT_PORT_TYPE
+oCout <= oCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mp_fadder:signedSumSub|m_fadder:adder_loop[2].fa_i
+ivpDataA => ovpSumOut.IN0
+ivpDataA => oCout.IN0
+ivpDataA => oCout.IN0
+ivpDataB => ovpSumOut.IN1
+ivpDataB => oCout.IN1
+ivpDataB => oCout.IN0
+iCin => ovpSumOut.IN1
+iCin => oCout.IN1
+iCin => oCout.IN1
+ovpSumOut <= ovpSumOut.DB_MAX_OUTPUT_PORT_TYPE
+oCout <= oCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mp_fadder:signedSumSub|m_fadder:adder_loop[3].fa_i
+ivpDataA => ovpSumOut.IN0
+ivpDataA => oCout.IN0
+ivpDataA => oCout.IN0
+ivpDataB => ovpSumOut.IN1
+ivpDataB => oCout.IN1
+ivpDataB => oCout.IN0
+iCin => ovpSumOut.IN1
+iCin => oCout.IN1
+iCin => oCout.IN1
+ovpSumOut <= ovpSumOut.DB_MAX_OUTPUT_PORT_TYPE
+oCout <= oCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mp_fadder:signedSumSub|m_fadder:adder_loop[4].fa_i
+ivpDataA => ovpSumOut.IN0
+ivpDataA => oCout.IN0
+ivpDataA => oCout.IN0
+ivpDataB => ovpSumOut.IN1
+ivpDataB => oCout.IN1
+ivpDataB => oCout.IN0
+iCin => ovpSumOut.IN1
+iCin => oCout.IN1
+iCin => oCout.IN1
+ovpSumOut <= ovpSumOut.DB_MAX_OUTPUT_PORT_TYPE
+oCout <= oCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux
+ivData00[0] => ivData00[0].IN1
+ivData00[1] => ivData00[1].IN1
+ivData00[2] => ivData00[2].IN1
+ivData00[3] => ivData00[3].IN1
+ivData00[4] => ivData00[4].IN1
+ivData01[0] => ivData01[0].IN1
+ivData01[1] => ivData01[1].IN1
+ivData01[2] => ivData01[2].IN1
+ivData01[3] => ivData01[3].IN1
+ivData01[4] => ivData01[4].IN1
+ivData02[0] => ivData02[0].IN1
+ivData02[1] => ivData02[1].IN1
+ivData02[2] => ivData02[2].IN1
+ivData02[3] => ivData02[3].IN1
+ivData02[4] => ivData02[4].IN1
+ivData03[0] => ivData03[0].IN1
+ivData03[1] => ivData03[1].IN1
+ivData03[2] => ivData03[2].IN1
+ivData03[3] => ivData03[3].IN1
+ivData03[4] => ivData03[4].IN1
+ivData04[0] => ivData04[0].IN1
+ivData04[1] => ivData04[1].IN1
+ivData04[2] => ivData04[2].IN1
+ivData04[3] => ivData04[3].IN1
+ivData04[4] => ivData04[4].IN1
+ivData05[0] => ivData05[0].IN1
+ivData05[1] => ivData05[1].IN1
+ivData05[2] => ivData05[2].IN1
+ivData05[3] => ivData05[3].IN1
+ivData05[4] => ivData05[4].IN1
+ivData06[0] => ivData06[0].IN1
+ivData06[1] => ivData06[1].IN1
+ivData06[2] => ivData06[2].IN1
+ivData06[3] => ivData06[3].IN1
+ivData06[4] => ivData06[4].IN1
+ivData07[0] => ivData07[0].IN1
+ivData07[1] => ivData07[1].IN1
+ivData07[2] => ivData07[2].IN1
+ivData07[3] => ivData07[3].IN1
+ivData07[4] => ivData07[4].IN1
+ivData08[0] => ivData08[0].IN1
+ivData08[1] => ivData08[1].IN1
+ivData08[2] => ivData08[2].IN1
+ivData08[3] => ivData08[3].IN1
+ivData08[4] => ivData08[4].IN1
+ivData09[0] => ivData09[0].IN1
+ivData09[1] => ivData09[1].IN1
+ivData09[2] => ivData09[2].IN1
+ivData09[3] => ivData09[3].IN1
+ivData09[4] => ivData09[4].IN1
+ivData0A[0] => ivData0A[0].IN1
+ivData0A[1] => ivData0A[1].IN1
+ivData0A[2] => ivData0A[2].IN1
+ivData0A[3] => ivData0A[3].IN1
+ivData0A[4] => ivData0A[4].IN1
+ivData0B[0] => ivData0B[0].IN1
+ivData0B[1] => ivData0B[1].IN1
+ivData0B[2] => ivData0B[2].IN1
+ivData0B[3] => ivData0B[3].IN1
+ivData0B[4] => ivData0B[4].IN1
+ivData0C[0] => ivData0C[0].IN1
+ivData0C[1] => ivData0C[1].IN1
+ivData0C[2] => ivData0C[2].IN1
+ivData0C[3] => ivData0C[3].IN1
+ivData0C[4] => ivData0C[4].IN1
+ivData0D[0] => ivData0D[0].IN1
+ivData0D[1] => ivData0D[1].IN1
+ivData0D[2] => ivData0D[2].IN1
+ivData0D[3] => ivData0D[3].IN1
+ivData0D[4] => ivData0D[4].IN1
+ivData0E[0] => ivData0E[0].IN1
+ivData0E[1] => ivData0E[1].IN1
+ivData0E[2] => ivData0E[2].IN1
+ivData0E[3] => ivData0E[3].IN1
+ivData0E[4] => ivData0E[4].IN1
+ivData0F[0] => ivData0F[0].IN1
+ivData0F[1] => ivData0F[1].IN1
+ivData0F[2] => ivData0F[2].IN1
+ivData0F[3] => ivData0F[3].IN1
+ivData0F[4] => ivData0F[4].IN1
+ivSel[0] => ivSel[0].IN8
+ivSel[1] => ivSel[1].IN4
+ivSel[2] => ivSel[2].IN2
+ivSel[3] => ivSel[3].IN1
+ovMuxout[0] <= mux2to1:mux_i0E.or_muxout
+ovMuxout[1] <= mux2to1:mux_i0E.or_muxout
+ovMuxout[2] <= mux2to1:mux_i0E.or_muxout
+ovMuxout[3] <= mux2to1:mux_i0E.or_muxout
+ovMuxout[4] <= mux2to1:mux_i0E.or_muxout
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i00
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i01
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i02
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i03
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i04
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i05
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i06
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i07
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i08
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i09
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i0A
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i0B
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i0C
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i0D
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|mALUlogic:mALU_i0|mux16to1:mainMux|mux2to1:mux_i0E
+iw_dataA[0] => or_muxout.DATAA
+iw_dataA[1] => or_muxout.DATAA
+iw_dataA[2] => or_muxout.DATAA
+iw_dataA[3] => or_muxout.DATAA
+iw_dataB[0] => or_muxout.DATAB
+iw_dataB[1] => or_muxout.DATAB
+iw_dataB[2] => or_muxout.DATAB
+iw_dataB[3] => or_muxout.DATAB
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+iw_sel => or_muxout.OUTPUTSELECT
+or_muxout[0] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[1] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[2] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+or_muxout[3] <= or_muxout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|bin2bcd:mAritmetic
+ivBinary[0] => ovBCD[0].DATAIN
+ivBinary[1] => LessThan1.IN8
+ivBinary[1] => Add1.IN8
+ivBinary[1] => regvShift.DATAA
+ivBinary[2] => LessThan0.IN6
+ivBinary[2] => Add0.IN6
+ivBinary[2] => regvShift.DATAA
+ivBinary[3] => LessThan0.IN5
+ivBinary[3] => Add0.IN5
+ivBinary[3] => regvShift.DATAA
+ivBinary[4] => LessThan0.IN4
+ivBinary[4] => Add0.IN4
+ivBinary[4] => regvShift.DATAA
+ovBCD[0] <= ivBinary[0].DB_MAX_OUTPUT_PORT_TYPE
+ovBCD[1] <= regvShift.DB_MAX_OUTPUT_PORT_TYPE
+ovBCD[2] <= regvShift.DB_MAX_OUTPUT_PORT_TYPE
+ovBCD[3] <= regvShift.DB_MAX_OUTPUT_PORT_TYPE
+ovBCD[4] <= regvShift.DB_MAX_OUTPUT_PORT_TYPE
+ovBCD[5] <= regvShift.DB_MAX_OUTPUT_PORT_TYPE
+ovBCD[6] <= <GND>
+ovBCD[7] <= <GND>
+ovBCD[8] <= <GND>
+ovBCD[9] <= <GND>
+ovBCD[10] <= <GND>
+ovBCD[11] <= <GND>
+ovBCD[12] <= <GND>
+ovBCD[13] <= <GND>
+ovBCD[14] <= <GND>
+ovBCD[15] <= <GND>
+
+
+|top_alu|m7SegDisp:m7segU
+ivSeg[0] => Decoder0.IN3
+ivSeg[1] => Decoder0.IN2
+ivSeg[2] => Decoder0.IN1
+ivSeg[3] => Decoder0.IN0
+ov7Seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|m7SegDisp:m7segD
+ivSeg[0] => Decoder0.IN3
+ivSeg[1] => Decoder0.IN2
+ivSeg[2] => Decoder0.IN1
+ivSeg[3] => Decoder0.IN0
+ov7Seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|m7SegDisp:m7segH
+ivSeg[0] => Decoder0.IN3
+ivSeg[1] => Decoder0.IN2
+ivSeg[2] => Decoder0.IN1
+ivSeg[3] => Decoder0.IN0
+ov7Seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|m7SegDisp:m7segT
+ivSeg[0] => Decoder0.IN3
+ivSeg[1] => Decoder0.IN2
+ivSeg[2] => Decoder0.IN1
+ivSeg[3] => Decoder0.IN0
+ov7Seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_alu|m7SegDisp:m7segDT
+ivSeg[0] => Decoder0.IN3
+ivSeg[1] => Decoder0.IN2
+ivSeg[2] => Decoder0.IN1
+ivSeg[3] => Decoder0.IN0
+ov7Seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+ov7Seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

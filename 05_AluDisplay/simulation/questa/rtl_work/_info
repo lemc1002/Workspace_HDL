@@ -1,0 +1,368 @@
+m255
+K4
+z2
+Z0 !s12c _opt2
+Z1 !s99 nomlopt
+Z2 !s12c _opt1
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R0
+R1
+R0
+R1
+R2
+R1
+R0
+R1
+R2
+R1
+R0
+R1
+R2
+R1
+R0
+R1
+R2
+R1
+R0
+R1
+R0
+R1
+R2
+R1
+R0
+R1
+R2
+R1
+R2
+R1
+R0
+R1
+R0
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+!s11e vcom 2025.2 2025.05, May 31 2025
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R2
+R1
+R2
+R1
+!s12c _opt
+R1
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z3 dC:/altera_ws/05_AluDisplay/simulation/questa
+T_opt
+!i145 1
+!i144 0
+!s110 1789597969
+V`X]BgPRo6V=4@0jX@7j4P2
+04 10 4 work mtb_simple fast 0
+=1-bcf1719d017f-6aab1910-138-6ffc
+R1
+Z4 !s12f OEM100
+Z5 !s12b OEM100
+Z6 !s124 OEM10U2 
+Z7 !s135 nogc
+Z8 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work +acc
+Z9 tCvgOpt 0 defaultOptions 1107585188
+n@_opt
+Z10 OL;O;2025.2;82
+R3
+T_opt1
+!i145 1
+!i144 0
+!s110 1790230534
+VHlLE>5Pz:1@FNjBScD:<C2
+Z11 04 10 4 work tb_bin2bcd fast 0
+=1-bcf1719d017f-6ab4c005-1ac-ce38
+R1
+R4
+R5
+R6
+R7
+R8
+R9
+n@_opt1
+R10
+R3
+T_opt2
+!i145 1
+!i144 0
+!s110 1790552822
+VOl1S0QLz:MEI=BWG2DgWd0
+R11
+=1-bcf1719d017f-6ab9aaf5-3d7-1ed8
+R1
+R4
+R5
+R6
+R7
+R8
+R9
+n@_opt2
+R10
+vbin2bcd
+2C:/altera_ws/05_AluDisplay/bin2bcd.v
+Z12 !s110 1790552820
+!i10b 1
+!s100 A2k[3NaJbX84d:Z05KT3W0
+IBZ_cla;<Wih]SP8caV=hF2
+R3
+w1790229323
+8C:/altera_ws/05_AluDisplay/bin2bcd.v
+FC:/altera_ws/05_AluDisplay/bin2bcd.v
+!i122 7
+L0 1 31
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z15 !s108 1790552820.000000
+!s107 C:/altera_ws/05_AluDisplay/bin2bcd.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/altera_ws/05_AluDisplay|C:/altera_ws/05_AluDisplay/bin2bcd.v|
+!i113 0
+Z16 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z17 !s92 -work work +incdir+C:/altera_ws/05_AluDisplay -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z18 tCvgOpt 0 defaultOptions 1085333592
+vm7SegDisp
+2C:/altera_ws/05_AluDisplay/m_7SegDisp.v
+Z19 !s110 1790552819
+!i10b 1
+!s100 59NJzAS;0Y36Z@XN=J2SX1
+INiL@dNMEdZbDNXFa6VbVa3
+R3
+w1790317563
+8C:/altera_ws/05_AluDisplay/m_7SegDisp.v
+FC:/altera_ws/05_AluDisplay/m_7SegDisp.v
+!i122 1
+L0 1 29
+R13
+R14
+r1
+!s85 0
+31
+Z20 !s108 1790552819.000000
+!s107 C:/altera_ws/05_AluDisplay/m_7SegDisp.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/altera_ws/05_AluDisplay|C:/altera_ws/05_AluDisplay/m_7SegDisp.v|
+!i113 0
+R16
+R17
+R18
+nm7@seg@disp
+vm_fadder
+2C:/altera_ws/05_AluDisplay/m_fadder.v
+!s110 1790552818
+!i10b 1
+!s100 l=Bm3:hU9SNMa5lH]oCoG3
+IP0Z6M]H0]W>B@T9fe:DHH1
+R3
+w1790384960
+8C:/altera_ws/05_AluDisplay/m_fadder.v
+FC:/altera_ws/05_AluDisplay/m_fadder.v
+!i122 0
+L0 60 17
+R13
+R14
+r1
+!s85 0
+31
+!s108 1790552818.000000
+!s107 C:/altera_ws/05_AluDisplay/m_fadder.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/altera_ws/05_AluDisplay|C:/altera_ws/05_AluDisplay/m_fadder.v|
+!i113 0
+R16
+R17
+R18
+vmALUlogic
+2C:/altera_ws/05_AluDisplay/mALUlogic.v
+R12
+!i10b 1
+!s100 I]:]om_Il=S4ObTRO=<1L0
+ITO8J9A0@6hL]UkMMSGOK51
+R3
+w1790464819
+8C:/altera_ws/05_AluDisplay/mALUlogic.v
+FC:/altera_ws/05_AluDisplay/mALUlogic.v
+!i122 5
+L0 2 127
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 C:/altera_ws/05_AluDisplay/mALUlogic.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/altera_ws/05_AluDisplay|C:/altera_ws/05_AluDisplay/mALUlogic.v|
+!i113 0
+R16
+R17
+R18
+nm@a@l@ulogic
+vmp_fadder
+2C:/altera_ws/05_AluDisplay/mp_fadder.v
+R19
+!i10b 1
+!s100 YPaZD@cLZ6Q5kD5UgM5A71
+Ikl4l^c=:`ja1c6TbTW0Vj3
+R3
+w1790459573
+8C:/altera_ws/05_AluDisplay/mp_fadder.v
+FC:/altera_ws/05_AluDisplay/mp_fadder.v
+!i122 4
+L0 1 28
+R13
+R14
+r1
+!s85 0
+31
+R20
+!s107 C:/altera_ws/05_AluDisplay/mp_fadder.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/altera_ws/05_AluDisplay|C:/altera_ws/05_AluDisplay/mp_fadder.v|
+!i113 0
+R16
+R17
+R18
+vmux16to1
+2C:/altera_ws/05_AluDisplay/m_mux16to1.v
+R12
+!i10b 1
+!s100 dD2P_Mf<cR=nAX?_J:]4z0
+I^oJX:`RSLd:RJlLh;A4Ea2
+R3
+w1790030888
+8C:/altera_ws/05_AluDisplay/m_mux16to1.v
+FC:/altera_ws/05_AluDisplay/m_mux16to1.v
+!i122 6
+L0 1 63
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 C:/altera_ws/05_AluDisplay/m_mux16to1.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/altera_ws/05_AluDisplay|C:/altera_ws/05_AluDisplay/m_mux16to1.v|
+!i113 0
+R16
+R17
+R18
+vmux2to1
+2C:/altera_ws/05_AluDisplay/mux2to1.v
+R19
+!i10b 1
+!s100 fVG5<mlV@@YXIUGIMPGDD1
+I:]5@n^U;Dkcf>iDld0gF31
+R3
+w1790009773
+8C:/altera_ws/05_AluDisplay/mux2to1.v
+FC:/altera_ws/05_AluDisplay/mux2to1.v
+!i122 3
+L0 3 13
+R13
+R14
+r1
+!s85 0
+31
+R20
+!s107 C:/altera_ws/05_AluDisplay/mux2to1.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/altera_ws/05_AluDisplay|C:/altera_ws/05_AluDisplay/mux2to1.v|
+!i113 0
+R16
+R17
+R18
+vtb_bin2bcd
+2C:/altera_ws/05_AluDisplay/tb_bin2bcd.v
+!s110 1790552821
+!i10b 1
+!s100 ;83B_cafZ?d5BRWAIY9gP3
+IMH7mOcYD=Yl0[`m70L<l70
+R3
+w1790230306
+8C:/altera_ws/05_AluDisplay/tb_bin2bcd.v
+FC:/altera_ws/05_AluDisplay/tb_bin2bcd.v
+!i122 8
+L0 2 54
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 C:/altera_ws/05_AluDisplay/tb_bin2bcd.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/altera_ws/05_AluDisplay|C:/altera_ws/05_AluDisplay/tb_bin2bcd.v|
+!i113 0
+R16
+R17
+R18
+vtop_alu
+2C:/altera_ws/05_AluDisplay/top_alu.v
+R19
+!i10b 1
+!s100 hDT]hnjPe?93bNbaH[^c;0
+Im;kTXSo?B@A>A6JYndbDi2
+R3
+w1790465893
+8C:/altera_ws/05_AluDisplay/top_alu.v
+FC:/altera_ws/05_AluDisplay/top_alu.v
+!i122 2
+L0 1 139
+R13
+R14
+r1
+!s85 0
+31
+R20
+!s107 C:/altera_ws/05_AluDisplay/top_alu.v|
+!s90 -reportprogress|300|-work|work|+incdir+C:/altera_ws/05_AluDisplay|C:/altera_ws/05_AluDisplay/top_alu.v|
+!i113 0
+R16
+R17
+R18

@@ -1,0 +1,63 @@
+module mux16to1 #(parameter NUM_BITS=4)
+(
+	input	wire [NUM_BITS-1:00]	ivData00,
+	input	wire [NUM_BITS-1:00]	ivData01,
+	input	wire [NUM_BITS-1:00]	ivData02,
+	input	wire [NUM_BITS-1:00]	ivData03,
+	input	wire [NUM_BITS-1:00]	ivData04,
+	input	wire [NUM_BITS-1:00]	ivData05,
+	input	wire [NUM_BITS-1:00]	ivData06,
+	input	wire [NUM_BITS-1:00]	ivData07,
+	input	wire [NUM_BITS-1:00]	ivData08,
+	input	wire [NUM_BITS-1:00]	ivData09,
+	input	wire [NUM_BITS-1:00]	ivData0A,
+	input	wire [NUM_BITS-1:00]	ivData0B,
+	input	wire [NUM_BITS-1:00]	ivData0C,
+	input	wire [NUM_BITS-1:00]	ivData0D,
+	input	wire [NUM_BITS-1:00]	ivData0E,
+	input	wire [NUM_BITS-1:00]	ivData0F,
+	input	wire [3:0] ivSel,
+	output [NUM_BITS-1:00]	ovMuxout
+);
+
+wire [NUM_BITS-1:00] w00;
+wire [NUM_BITS-1:00] w01;
+wire [NUM_BITS-1:00] w02;
+wire [NUM_BITS-1:00] w03;
+wire [NUM_BITS-1:00] w04;
+wire [NUM_BITS-1:00] w05;
+wire [NUM_BITS-1:00] w06;
+wire [NUM_BITS-1:00] w07;
+wire [NUM_BITS-1:00] w08;
+wire [NUM_BITS-1:00] w09;
+wire [NUM_BITS-1:00] w0A;
+wire [NUM_BITS-1:00] w0B;
+wire [NUM_BITS-1:00] w0C;
+wire [NUM_BITS-1:00] w0D;
+wire [NUM_BITS-1:00] w0E;
+wire [NUM_BITS-1:00] w0F;
+
+//L1
+mux2to1 mux_i00(.iw_dataA(ivData00),.iw_dataB(ivData01),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i01(.iw_dataA(ivData02),.iw_dataB(ivData03),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i02(.iw_dataA(ivData04),.iw_dataB(ivData05),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i03(.iw_dataA(ivData06),.iw_dataB(ivData07),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i04(.iw_dataA(ivData08),.iw_dataB(ivData09),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i05(.iw_dataA(ivData00),.iw_dataB(ivData01),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i06(.iw_dataA(ivData00),.iw_dataB(ivData01),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i07(.iw_dataA(ivData00),.iw_dataB(ivData01),.iw_sel(ivSel[0]),.or_muxout(w00));
+
+//L2
+mux2to1 mux_i08(.iw_dataA(ivData00),.iw_dataB(ivData01),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i09(.iw_dataA(ivData00),.iw_dataB(ivData01),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i0A(.iw_dataA(ivData00),.iw_dataB(ivData01),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i0B(.iw_dataA(ivData00),.iw_dataB(ivData01),.iw_sel(ivSel[0]),.or_muxout(w00));
+
+//L3
+mux2to1 mux_i0C(.iw_dataA(ivData00),.iw_dataB(ivData01),.iw_sel(ivSel[0]),.or_muxout(w00));
+mux2to1 mux_i1D(.iw_dataA(ivData02),.iw_dataB(ivData03),.iw_sel(ivSel[0]),.or_muxout(w01));
+
+//L4
+mux2to1 mux_i2E(.iw_dataA(w00),.iw_dataB(w01),.iw_sel(ivSel[1]),.or_muxout(ovMuxout));
+
+endmodule

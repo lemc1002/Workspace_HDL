@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at mALUlogic.v(8): object "ivDataA" differs only in case from object "ivDATAA" in the same scope File: C:/altera_ws/05_AluDisplay/mALUlogic.v Line: 8
+Info (10281): Verilog HDL Declaration information at mALUlogic.v(9): object "ivDataB" differs only in case from object "ivDATAB" in the same scope File: C:/altera_ws/05_AluDisplay/mALUlogic.v Line: 9

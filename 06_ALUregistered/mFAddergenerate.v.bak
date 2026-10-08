@@ -1,0 +1,106 @@
+module mFAddergenerate
+#(
+	parameter NUM_BITS = 8
+)
+(
+	input iClk,
+	input inRst,
+//	input iCE, not in use because it is not iCE required
+	input inEn,
+	
+	input  	[NUM_BITS-1:00]	ivDataA,
+	input  	[NUM_BITS-1:00]	ivDataB,
+	input 	iCin,
+	output	[NUM_BITS-1:00]	ovSumOut,
+	
+	output 	oCout,
+	output	oOvf,
+	output	oNeg,
+	output	oZero	
+);
+//********************************************************************
+//                    		Includes section
+//********************************************************************
+
+//********************************************************************
+//                    		defines section
+//********************************************************************
+
+//********************************************************************
+//                    Internal signals section
+//									(wire and reg)
+//********************************************************************
+//	wire	[NUM_BITS-1:0]	wvDataA;
+reg rSumOut_d;
+reg rSumOut_q;
+reg rCout_d;
+reg rCout_q;
+
+//********************************************************************
+//                    Continious Assignment
+//********************************************************************
+assign oSumOut = rSumOut_q;
+assign oCout = rCout_q;
+
+//********************************************************************
+//                    Sequential logic section
+//	(registered output) Reg (left side) (blocking = and non blocking <=)
+//********************************************************************
+always @(posedge iClk) 
+begin
+	if(!inRst) 
+	begin
+		rSumOut_q <= 1'b0;
+		rCout_q <= 1'b0; 
+	end//ifRst
+	
+	else 
+	begin
+		rSumOut_q <= rSumOut_d;
+		rCout_q <= rCout_d; 
+	end //elseRst
+	
+end //secutial logic section
+
+//********************************************************************
+//                    Combinatory logic section
+//********************************************************************
+always @(*)
+begin
+	if (!inEn) 
+	begin
+		rSumOut_d <= iDataA ^ iDataB ^ iCin;
+		rCout_d <= (iDataA & iDataB)|(iDataA & iCin)|(iDataB & iCin);
+	end//if_!iEn
+end//always
+//********************************************************************
+//                    module instantiation section
+//********************************************************************
+
+
+//	mALUlogic
+//	#(
+//		.TRUNC(TRUNC),
+//		.NUM_BITS(NUM_BITS),
+//		.NUM_DISP(NUM_DISP)
+//	)
+
+endmodule
+
+  wire [NUM_BITS:0] wvCarrie;
+  //wire [NUM_BITS-1:0] b_b;
+  
+  assign wvCarrie[0] = iCin;
+    
+  genvar i;
+  generate
+    for (i=0;i<NUM_BITS;i=i+1) begin : adder_loop //adder_loop[0].fa_i, adder_loop is simply the named generate block that groups and indexes all generated full-adder instances.
+      m_fadder fa_i(.ivpDataA(ivDataA[i]),.ivpDataB(ivDataB[i]),.iCin(wvCarrie[i]),.ovpSumOut(ovpSumOut[i]),.oCout(wvCarrie[i+1]));
+    end
+  endgenerate
+  
+  assign oCout = wvCarrie[NUM_BITS];
+  assign oOvf = wvCarrie[NUM_BITS-1] ^ wvCarrie[NUM_BITS]; //ovf
+  assign oNeg = ovpSumOut[NUM_BITS-1]; //overflow = (a[3]==b[3]) && (a[3]!=s[3]) => 	overflow = ~(a[3]^b[3]) & (a[3]^s[3])
+  assign oZero = ~|ovpSumOut;
+ endmodule

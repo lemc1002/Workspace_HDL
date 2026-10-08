@@ -1,0 +1,19 @@
+Quartus Prime Archive log --	C:/altera_ws/Workspace_HDL/06_ALUregistered/regALU.qarlog
+
+Archive:	C:/altera_ws/Workspace_HDL/06_ALUregistered/regALU.qar
+Date:		Thu Oct  8 14:08:59 2026
+Quartus Prime		25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+	=========== Files Selected: ===========
+C:/altera_ws/Workspace_HDL/06_ALUregistered/mFAddergenerate.v
+C:/altera_ws/Workspace_HDL/06_ALUregistered/mUnitFullAdder.v
+C:/altera_ws/Workspace_HDL/06_ALUregistered/mtRegALU.v
+C:/altera_ws/Workspace_HDL/06_ALUregistered/regALU.qpf
+C:/altera_ws/Workspace_HDL/06_ALUregistered/regALU.qsf
+C:/altera_ws/Workspace_HDL/06_ALUregistered/tbFAddergenerate.v
+C:/altera_ws/Workspace_HDL/06_ALUregistered/tbUnitFullAdder.v
+c:/altera_lite/25.1std/quartus/bin64/assignment_defaults.qdf
+	======= Total: 8 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

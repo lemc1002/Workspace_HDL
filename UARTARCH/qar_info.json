@@ -1,0 +1,7 @@
+{
+	"common_dir" : "C:/Cuauh/My_Designs/QuartusPrime/UART_Rx/",
+	"acds_version" : "Version 20.1.1",
+	"platform" : "windows",
+	"os" : "Windows 10",
+	"qpf" : "Quartus_Project/UART_Rx.qpf"
+}

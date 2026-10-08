@@ -1,0 +1,85 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ovSumOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ovSumOut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ovSumOut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ovSumOut[3]",
+					"strict" : false
+				},
+				{
+					"name" : "oCout",
+					"strict" : false
+				},
+				{
+					"name" : "oOvf",
+					"strict" : false
+				},
+				{
+					"name" : "oNeg",
+					"strict" : false
+				},
+				{
+					"name" : "oZero",
+					"strict" : false
+				},
+				{
+					"name" : "inRst",
+					"strict" : false
+				},
+				{
+					"name" : "ivDataA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ivDataB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "iCin",
+					"strict" : false
+				},
+				{
+					"name" : "iClk",
+					"strict" : false
+				},
+				{
+					"name" : "ivDataA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ivDataB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ivDataA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ivDataB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ivDataA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ivDataB[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

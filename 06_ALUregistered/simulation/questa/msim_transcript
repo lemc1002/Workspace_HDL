@@ -1,0 +1,224 @@
+# Reading pref.tcl
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do regALU_run_msim_gate_verilog.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work gate_work 
+# ** Note: (vmap-220) 'c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# Copying c:/altera_lite/25.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog  -work work +incdir+. {regALU.vo}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 10:30:32 on Oct 08,2026
+# vlog -reportprogress 300 -work work "+incdir+." regALU.vo 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module mFAddergenerate
+# 
+# Top level modules:
+# 	mFAddergenerate
+# End time: 10:30:32 on Oct 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog  -work work +incdir+C:/altera_ws/Workspace_HDL/06_ALUregistered {C:/altera_ws/Workspace_HDL/06_ALUregistered/tbFAddergenerate.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 10:30:33 on Oct 08,2026
+# vlog -reportprogress 300 -work work "+incdir+C:/altera_ws/Workspace_HDL/06_ALUregistered" C:/altera_ws/Workspace_HDL/06_ALUregistered/tbFAddergenerate.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module tbFAddergenerate
+# 
+# Top level modules:
+# 	tbFAddergenerate
+# End time: 10:30:33 on Oct 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs="+acc"  tbFAddergenerate
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -t 1ps -L altera_ver -L altera_lnsim_ver -L cyclonev_ver -L lpm_ver -L sgate_ver -L cyclonev_hssi_ver -L altera_mf_ver -L cyclonev_pcie_hip_ver -L gate_work -L work -voptargs=""+acc"" tbFAddergenerate 
+# Start time: 10:30:33 on Oct 08,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Error (suppressible): C:/altera_ws/Workspace_HDL/06_ALUregistered/tbFAddergenerate.v(28): (vopt-2732) Module parameter 'NUM_BITS' not found for override.
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./regALU_run_msim_gate_verilog.do PAUSED at line 12
+vsim work.mFAddergenerate
+# vsim work.mFAddergenerate 
+# Start time: 10:30:33 on Oct 08,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Error: regALU.vo(632): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\inEn~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(609): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance 'WideNor0' at path 'mFAddergenerate'
+# ** Error: regALU.vo(591): Module 'dffeas' is not defined.
+#  For instance 'rOvf_q' at path 'mFAddergenerate'
+# ** Error: regALU.vo(566): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rOvf_q~0 ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(548): Module 'dffeas' is not defined.
+#  For instance 'rCout_q' at path 'mFAddergenerate'
+# ** Error: regALU.vo(525): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rCout_q~0 ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(507): Module 'dffeas' is not defined.
+#  For instance '\rSumOut_q[3] ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(480): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rSumOut_q~3 ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(470): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataB[3]~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(460): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataA[3]~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(442): Module 'dffeas' is not defined.
+#  For instance '\rSumOut_q[2] ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(419): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rSumOut_q~2 ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(395): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\adder_loop[1].fa_i|oCout~0 ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(385): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataB[2]~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(375): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataA[2]~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(357): Module 'dffeas' is not defined.
+#  For instance '\rSumOut_q[1] ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(331): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rSumOut_q~1 ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(321): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataB[1]~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(311): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataA[1]~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(293): Module 'dffeas' is not defined.
+#  For instance '\rSumOut_q[0] ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(270): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rSumOut_q~0 ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(260): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\iCin~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(250): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataB[0]~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(240): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataA[0]~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(230): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\inRst~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(220): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\iClk~input ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(205): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\oZero~output ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(190): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\oNeg~output ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(175): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\oOvf~output ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(160): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\oCout~output ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(145): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\ovSumOut[3]~output ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(130): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\ovSumOut[2]~output ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(115): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\ovSumOut[1]~output ' at path 'mFAddergenerate'
+# ** Error: regALU.vo(100): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\ovSumOut[0]~output ' at path 'mFAddergenerate'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=35, Warnings=1.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./regALU_run_msim_gate_verilog.do PAUSED at line 12
+vsim work.tbFAddergenerate
+# vsim work.tbFAddergenerate 
+# Start time: 10:30:33 on Oct 08,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Error (suppressible): C:/altera_ws/Workspace_HDL/06_ALUregistered/tbFAddergenerate.v(28): (vopt-2732) Module parameter 'NUM_BITS' not found for override.
+# ** Error: regALU.vo(632): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\inEn~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(609): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance 'WideNor0' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(591): Module 'dffeas' is not defined.
+#  For instance 'rOvf_q' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(566): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rOvf_q~0 ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(548): Module 'dffeas' is not defined.
+#  For instance 'rCout_q' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(525): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rCout_q~0 ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(507): Module 'dffeas' is not defined.
+#  For instance '\rSumOut_q[3] ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(480): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rSumOut_q~3 ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(470): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataB[3]~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(460): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataA[3]~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(442): Module 'dffeas' is not defined.
+#  For instance '\rSumOut_q[2] ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(419): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rSumOut_q~2 ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(395): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\adder_loop[1].fa_i|oCout~0 ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(385): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataB[2]~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(375): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataA[2]~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(357): Module 'dffeas' is not defined.
+#  For instance '\rSumOut_q[1] ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(331): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rSumOut_q~1 ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(321): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataB[1]~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(311): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataA[1]~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(293): Module 'dffeas' is not defined.
+#  For instance '\rSumOut_q[0] ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(270): Module 'cyclonev_lcell_comb' is not defined.
+#  For instance '\rSumOut_q~0 ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(260): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\iCin~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(250): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataB[0]~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(240): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\ivDataA[0]~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(230): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\inRst~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(220): Module 'cyclonev_io_ibuf' is not defined.
+#  For instance '\iClk~input ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(205): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\oZero~output ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(190): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\oNeg~output ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(175): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\oOvf~output ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(160): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\oCout~output ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(145): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\ovSumOut[3]~output ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(130): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\ovSumOut[2]~output ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(115): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\ovSumOut[1]~output ' at path 'tbFAddergenerate.mFAdder_dut'
+# ** Error: regALU.vo(100): Module 'cyclonev_io_obuf' is not defined.
+#  For instance '\ovSumOut[0]~output ' at path 'tbFAddergenerate.mFAdder_dut'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=70, Warnings=1.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./regALU_run_msim_gate_verilog.do PAUSED at line 12

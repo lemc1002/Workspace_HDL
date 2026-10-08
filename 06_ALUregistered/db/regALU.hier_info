@@ -1,0 +1,89 @@
+|mFAddergenerate
+iClk => rOvf_q.CLK
+iClk => rCout_q.CLK
+iClk => rSumOut_q[0].CLK
+iClk => rSumOut_q[1].CLK
+iClk => rSumOut_q[2].CLK
+iClk => rSumOut_q[3].CLK
+inRst => rSumOut_q.OUTPUTSELECT
+inRst => rSumOut_q.OUTPUTSELECT
+inRst => rSumOut_q.OUTPUTSELECT
+inRst => rSumOut_q.OUTPUTSELECT
+inRst => rCout_q.OUTPUTSELECT
+inRst => rOvf_q.OUTPUTSELECT
+inEn => ~NO_FANOUT~
+ivDataA[0] => ivDataA[0].IN1
+ivDataA[1] => ivDataA[1].IN1
+ivDataA[2] => ivDataA[2].IN1
+ivDataA[3] => ivDataA[3].IN1
+ivDataB[0] => ivDataB[0].IN1
+ivDataB[1] => ivDataB[1].IN1
+ivDataB[2] => ivDataB[2].IN1
+ivDataB[3] => ivDataB[3].IN1
+iCin => wvCarrie[0].IN1
+ovSumOut[0] <= rSumOut_q[0].DB_MAX_OUTPUT_PORT_TYPE
+ovSumOut[1] <= rSumOut_q[1].DB_MAX_OUTPUT_PORT_TYPE
+ovSumOut[2] <= rSumOut_q[2].DB_MAX_OUTPUT_PORT_TYPE
+ovSumOut[3] <= rSumOut_q[3].DB_MAX_OUTPUT_PORT_TYPE
+oCout <= rCout_q.DB_MAX_OUTPUT_PORT_TYPE
+oOvf <= rOvf_q.DB_MAX_OUTPUT_PORT_TYPE
+oNeg <= rSumOut_q[3].DB_MAX_OUTPUT_PORT_TYPE
+oZero <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mFAddergenerate|mUnitFullAdder:adder_loop[0].fa_i
+iDataA => oSumOut.IN0
+iDataA => oCout.IN0
+iDataA => oCout.IN0
+iDataB => oSumOut.IN1
+iDataB => oCout.IN1
+iDataB => oCout.IN0
+iCin => oSumOut.IN1
+iCin => oCout.IN1
+iCin => oCout.IN1
+oSumOut <= oSumOut.DB_MAX_OUTPUT_PORT_TYPE
+oCout <= oCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mFAddergenerate|mUnitFullAdder:adder_loop[1].fa_i
+iDataA => oSumOut.IN0
+iDataA => oCout.IN0
+iDataA => oCout.IN0
+iDataB => oSumOut.IN1
+iDataB => oCout.IN1
+iDataB => oCout.IN0
+iCin => oSumOut.IN1
+iCin => oCout.IN1
+iCin => oCout.IN1
+oSumOut <= oSumOut.DB_MAX_OUTPUT_PORT_TYPE
+oCout <= oCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mFAddergenerate|mUnitFullAdder:adder_loop[2].fa_i
+iDataA => oSumOut.IN0
+iDataA => oCout.IN0
+iDataA => oCout.IN0
+iDataB => oSumOut.IN1
+iDataB => oCout.IN1
+iDataB => oCout.IN0
+iCin => oSumOut.IN1
+iCin => oCout.IN1
+iCin => oCout.IN1
+oSumOut <= oSumOut.DB_MAX_OUTPUT_PORT_TYPE
+oCout <= oCout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mFAddergenerate|mUnitFullAdder:adder_loop[3].fa_i
+iDataA => oSumOut.IN0
+iDataA => oCout.IN0
+iDataA => oCout.IN0
+iDataB => oSumOut.IN1
+iDataB => oCout.IN1
+iDataB => oCout.IN0
+iCin => oSumOut.IN1
+iCin => oCout.IN1
+iCin => oCout.IN1
+oSumOut <= oSumOut.DB_MAX_OUTPUT_PORT_TYPE
+oCout <= oCout.DB_MAX_OUTPUT_PORT_TYPE
+
+

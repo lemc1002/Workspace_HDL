@@ -1,5 +1,5 @@
 Analysis & Synthesis report for stopwatch
-Sun Oct 11 22:24:17 2026
+Mon Oct 12 11:11:12 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -44,14 +44,14 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Oct 11 22:24:17 2026           ;
+; Analysis & Synthesis Status     ; Successful - Mon Oct 12 11:11:12 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; stopwatch                                       ;
 ; Top-level Entity Name           ; mUnitCounter                                    ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
 ; Total registers                 ; 4                                               ;
-; Total pins                      ; 8                                               ;
+; Total pins                      ; 9                                               ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
 ; Total DSP Blocks                ; 0                                               ;
@@ -187,21 +187,21 @@ on the Quartus Prime software download page.
 ;                                             ;           ;
 ; Combinational ALUT usage for logic          ; 5         ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 0         ;
-;     -- 5 input functions                    ; 1         ;
-;     -- 4 input functions                    ; 3         ;
-;     -- <=3 input functions                  ; 1         ;
+;     -- 6 input functions                    ; 1         ;
+;     -- 5 input functions                    ; 4         ;
+;     -- 4 input functions                    ; 0         ;
+;     -- <=3 input functions                  ; 0         ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 4         ;
 ;                                             ;           ;
-; I/O pins                                    ; 8         ;
+; I/O pins                                    ; 9         ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; rCnt_q[0] ;
 ; Maximum fan-out                             ; 6         ;
-; Total fan-out                               ; 46        ;
-; Average fan-out                             ; 1.84      ;
+; Total fan-out                               ; 56        ;
+; Average fan-out                             ; 2.07      ;
 +---------------------------------------------+-----------+
 
 
@@ -210,7 +210,7 @@ on the Quartus Prime software download page.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
-; |mUnitCounter              ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 8    ; 0            ; |mUnitCounter       ; mUnitCounter ; work         ;
+; |mUnitCounter              ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 9    ; 0            ; |mUnitCounter       ; mUnitCounter ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -225,7 +225,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 3     ;
+; Number of registers using Clock Enable       ; 4     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -247,17 +247,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 4                           ;
-;     CLR               ; 1                           ;
-;     ENA CLR           ; 3                           ;
+;     ENA CLR           ; 4                           ;
 ; arriav_lcell_comb     ; 5                           ;
 ;     normal            ; 5                           ;
-;         1 data inputs ; 1                           ;
-;         4 data inputs ; 3                           ;
-;         5 data inputs ; 1                           ;
-; boundary_port         ; 8                           ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 1                           ;
+; boundary_port         ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.83                        ;
+; Average LUT depth     ; 0.85                        ;
 +-----------------------+-----------------------------+
 
 
@@ -276,7 +274,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Sun Oct 11 22:24:04 2026
+    Info: Processing started: Mon Oct 12 11:11:04 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stopwatch -c stopwatch
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file designfiles/tmstopwatch.v
@@ -286,18 +284,17 @@ Info (12021): Found 1 design units, including 1 entities, in source file designf
 Info (12021): Found 1 design units, including 1 entities, in source file designfiles/mucnt_baseline.v
     Info (12023): Found entity 1: mUcnt_baseline File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mUcnt_baseline.v Line: 1
 Info (12127): Elaborating entity "mUnitCounter" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at mUnitCounter.v(28): object "wCntRst" assigned a value but never read File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mUnitCounter.v Line: 28
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 13 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Info (21057): Implemented 14 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
     Info (21059): Implemented 5 output pins
     Info (21061): Implemented 5 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4853 megabytes
-    Info: Processing ended: Sun Oct 11 22:24:17 2026
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Processing ended: Mon Oct 12 11:11:12 2026
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:18
 
 

@@ -7,10 +7,11 @@ module mUnitCounter
 (
  input iClk,
  input inRst,
- input inEnable,
+ input iEnable,
  
  input iUpDown, 
- output [CNT_SIZE-1:0] ovCnt
+ output [CNT_SIZE-1:0] ovCnt,
+ output oMaxHit
 );
 
 //********************************************************************
@@ -37,6 +38,9 @@ reg [CNT_SIZE-1:0] rCnt_q;
 //********************************************************************
 
 assign ovCnt = rCnt_q;
+assign oMaxHit = iEnable && ( (iUpDown  && (rCnt_q == MAX_CNT)) || 
+										(!iUpDown && (rCnt_q == {CNT_SIZE{1'b0}}) )
+									 );
 
 
 //********************************************************************
@@ -64,17 +68,35 @@ end//always seq
 always @(*)
 begin
 	rCnt_d = rCnt_q;
-	if(!inEnable)
+	if(iEnable)
 	begin
-		if(rCnt_q==MAX_CNT)
+	
+		if(iUpDown)
 		begin
-			rCnt_d = {CNT_SIZE{1'b0}};
-		end//if rCnt_d
+			if(rCnt_q >=MAX_CNT)
+				begin
+					rCnt_d = {CNT_SIZE{1'b0}};
+				end//ifCNTMAX
+				
+				else
+				begin
+					rCnt_d = rCnt_q+1'b1;
+				end//elseCNTMAX
+		end//if UpDown
 		
-		else
+		else //CNT DOWN LOGIC
 		begin
-			rCnt_d = iUpDown? rCnt_q+1'b1:rCnt_q-1'b1;
-		end//else_updowncnt
+				if(rCnt_q == {CNT_SIZE{1'b0}})
+				begin
+					rCnt_d = MAX_CNT;
+				end//ifCNTMAX
+				
+				else
+				begin
+					rCnt_d = rCnt_q-1'b1;
+				end//elseCNTMAX
+		end//else
+		
 		
 	end // ienable
 end //always

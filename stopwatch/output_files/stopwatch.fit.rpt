@@ -1,5 +1,5 @@
 Fitter report for stopwatch
-Mon Oct 12 11:11:36 2026
+Mon Oct 12 15:24:04 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -64,7 +64,7 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                    ;
 +---------------------------------+-------------------------------------------------+
-; Fitter Status                   ; Successful - Mon Oct 12 11:11:36 2026           ;
+; Fitter Status                   ; Successful - Mon Oct 12 15:24:04 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; stopwatch                                       ;
 ; Top-level Entity Name           ; mUnitCounter                                    ;
@@ -1864,7 +1864,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.43 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.41 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1874,9 +1874,9 @@ Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments 
 Info (144001): Generated suppressed messages file C:/altera_ws/Workspace_HDL/stopwatch/output_files/stopwatch.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 75 warnings
     Info: Peak virtual memory: 6546 megabytes
-    Info: Processing ended: Mon Oct 12 11:11:36 2026
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:43
+    Info: Processing ended: Mon Oct 12 15:24:04 2026
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:41
 
 
 +----------------------------+

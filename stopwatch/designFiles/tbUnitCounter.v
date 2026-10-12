@@ -1,17 +1,97 @@
 // Test bench
-`timescale 10ns/1ns //Unit time and resolution defintion
-module tbUnitCounter_UUT();
+`timescale 1ns/1ps //Unit time and resolution defintion
+module tbUnitCounter();
 
-	localparam CNT_SIZE = 4
-	localparam MAX_CNT = 9
+	localparam CNT_SIZE = 4;
+	localparam MAX_CNT = 9;
 
 	// Stimulous source
 	reg iClk;
 	reg iEnable;
 	reg inRst;
 	reg iUpDown;
+	
+	//monitor signals
+	wire wMaxHit;
+	wire [20-1:0]wvCnt_cc;
+	
+//********************************************************************
+//                    module instantiation section
+//********************************************************************
+// Correct named parameter override
+    mUnitCounter
+    #(
+        .CNT_SIZE(20),
+        .MAX_CNT(500_000)
+    )
+    mUnitCounter_tickcc
+    (
+        .iClk    (iClk),
+        .inRst   (inRst|wMaxHit),
+        .iEnable (iEnable),
+        .iUpDown (iUpDown),
+        .ovCnt   (wvCnt_cc),
+        .oMaxHit (wMaxHit)
+    );
+	
+//--------------------------------------------------
+// Clock generation
+//--------------------------------------------------
+	initial
+	begin
+		iClk = 1'b0;
+		forever #10 iClk = ~iClk; //every 10 time units (#10) creates a 20 ns square wave 50MHz
+	end
+	
+  initial 
+  begin
+	//Step A: initialize signals
+	iEnable=0;
+	inRst=0;	// Assert reset (Active Low)
+	iUpDown=1;
+	
+	// Step B: Hold reset for 25ns, then release
+	#10;
+	inRst = 1;
+	#10;
+	
+	// Step C: start count
+	$display("=== STARTING UP-COUNT TEST ===");
+	iEnable = 1;
+	#10_000_300;
+	
+	// Step D: Test Disable / Pause feature
+	$display("=== TESTING ENABLE PAUSE ===");
+	iEnable = 0;
+	inRst=0;	// Assert reset (Active Low)
+	#10;
+	inRst = 1;
+	#40; // Count value should remain frozen
+	
+	// Step E: Test DOWN Counting
+	$display("=== STARTING DOWN-COUNT TEST ===");
+	iEnable = 1;
+	iUpDown = 0; // Switch to DOWN mode
+	// Wait 240ns (12 clock cycles) to watch it count 1->0->9->8...
+	#10_000_300;
+	
+	// Step F: Finish simulation
+	$display("=== SIMULATION COMPLETE ===");
+	$finish;
+  end
+  
+// ----------------------------------------------------------------
+// 6. Monitor signal changes in console window
+// ----------------------------------------------------------------
+	initial 
+	begin
+	  $monitor("Time=%0tns | Rst=%b | En=%b | UpDown=%b | Count=%d | MaxHit=%b",
+				  $time, inRst, iEnable, iUpDown, wvCnt_cc, wMaxHit);
+	end
 
-	wire oMaxHit;
-	wire [CNT_SIZE-1:0]ovCnt
-
+  initial begin
+//    $dumpfile("dump.vcd"); 
+//    $dumpvars;
+    #25_000_000 $stop();    
+  end 
 endmodule

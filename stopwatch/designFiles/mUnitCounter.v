@@ -1,17 +1,16 @@
 //Counter module
 module mUnitCounter
 #(
-	parameter CNT_SIZE = 4,
-	parameter [CNT_SIZE-1:0]MAX_CNT = 9
+    parameter CNT_SIZE = 4,
+    parameter [CNT_SIZE-1:0] MAX_CNT = 9
 )
 (
- input iClk,
- input inRst,
- input iEnable,
- 
- input iUpDown, 
- output [CNT_SIZE-1:0] ovCnt,
- output oMaxHit
+    input  wire                  iClk,
+    input  wire                  inRst,
+    input  wire                  iEnable,
+    input  wire                  iUpDown,
+    output wire [CNT_SIZE-1:0]   ovCnt,
+    output wire                  oMaxHit
 );
 
 //********************************************************************

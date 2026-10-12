@@ -1,0 +1,10 @@
+//Counter module
+module
+#(
+
+)
+(
+ input CLOCK_50,
+);
+
+endmodule

@@ -1,0 +1,28 @@
+module cnt_comp #(
+    parameter CNT_SIZE = 4,
+    parameter MAX_CNT  = 9
+)(
+    input clk,
+    input rst,
+    input en,
+
+    output reg [CNT_SIZE-1:0] cnt,
+    output max_hit
+);
+
+wire cnt_rst;
+wire [CNT_SIZE-1:0] nxt_cnt;
+
+assign nxt_cnt = cnt + 1'b1;
+
+always @(posedge clk) begin
+    if (cnt_rst)
+        cnt <= {CNT_SIZE{1'b0}};
+    else if (en)
+        cnt <= nxt_cnt;
+end
+
+assign max_hit = en & (cnt == MAX_CNT);
+assign cnt_rst = rst | max_hit;
+
+endmodule

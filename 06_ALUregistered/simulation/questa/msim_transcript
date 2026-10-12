@@ -222,3 +222,5 @@ vsim work.tbFAddergenerate
 # Error: Error loading design
 #        Pausing macro execution
 # MACRO ./regALU_run_msim_gate_verilog.do PAUSED at line 12
+# End time: 14:16:04 on Oct 08,2026, Elapsed time: 3:45:31
+# Errors: 70, Warnings: 1

@@ -13,7 +13,7 @@ module tbUnitCounter();
 	
 	//monitor signals
 	wire wMaxHit;
-	wire [20-1:0]wvCnt_cc;
+	wire [CNT_SIZE-1:0]wvCnt;
 	
 //********************************************************************
 //                    module instantiation section
@@ -21,16 +21,16 @@ module tbUnitCounter();
 // Correct named parameter override
     mUnitCounter
     #(
-        .CNT_SIZE(20),
-        .MAX_CNT(500_000)
+        .CNT_SIZE(CNT_SIZE),
+        .MAX_CNT(MAX_CNT)
     )
-    mUnitCounter_tickcc
+    mUnitCounter_UUT
     (
         .iClk    (iClk),
         .inRst   (inRst|wMaxHit),
         .iEnable (iEnable),
         .iUpDown (iUpDown),
-        .ovCnt   (wvCnt_cc),
+        .ovCnt   (wvCnt),
         .oMaxHit (wMaxHit)
     );
 	
@@ -58,7 +58,7 @@ module tbUnitCounter();
 	// Step C: start count
 	$display("=== STARTING UP-COUNT TEST ===");
 	iEnable = 1;
-	#10_000_300;
+	#240;
 	
 	// Step D: Test Disable / Pause feature
 	$display("=== TESTING ENABLE PAUSE ===");
@@ -73,7 +73,7 @@ module tbUnitCounter();
 	iEnable = 1;
 	iUpDown = 0; // Switch to DOWN mode
 	// Wait 240ns (12 clock cycles) to watch it count 1->0->9->8...
-	#10_000_300;
+	#240;
 	
 	// Step F: Finish simulation
 	$display("=== SIMULATION COMPLETE ===");
@@ -86,12 +86,12 @@ module tbUnitCounter();
 	initial 
 	begin
 	  $monitor("Time=%0tns | Rst=%b | En=%b | UpDown=%b | Count=%d | MaxHit=%b",
-				  $time, inRst, iEnable, iUpDown, wvCnt_cc, wMaxHit);
+				  $time, inRst, iEnable, iUpDown, wvCnt, wMaxHit);
 	end
 
   initial begin
 //    $dumpfile("dump.vcd"); 
 //    $dumpvars;
-    #25_000_000 $stop();    
+    #660 $stop();    
   end 
 endmodule

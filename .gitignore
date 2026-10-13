@@ -2,3 +2,6 @@
 /stopwatch/db
 /stopwatch/output_files
 /stopwatch/simulation
+/stopwatch/designFiles/work
+*.bak
+/stopwatch/designFiles/work

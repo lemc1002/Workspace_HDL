@@ -1,12 +1,14 @@
 m255
 K4
 z2
-Z0 !s12c _opt
-Z1 !s99 nomlopt
+!s12c _opt3
+Z0 !s99 nomlopt
+Z1 !s12c _opt
 R0
 R1
 R0
 R1
+R0
 !s11f vlog 2025.2 2025.05, May 31 2025
 13
 !s112 1.1
@@ -15,25 +17,49 @@ R1
 !i10f 100
 cModel Technology
 Z2 dC:/altera_ws/Workspace_HDL/stopwatch/designFiles
-T_opt
+T_opt3
 !i145 1
 !i144 0
-!s110 1791840433
-VXa[cnHYVAdzK`@n4N4cZ43
-04 13 4 work tbUnitCounter fast 0
-=4-bcf1719d017f-6acd50b0-1ea-6f94
-R1
+!s110 1791844406
+VfNzaKQ7QQdOAQd[@6kE6z2
+04 10 4 work tb_mBCDdig fast 0
+=6-bcf1719d017f-6acd6035-18d-5720
+R0
 !s12f OEM100
 !s12b OEM100
-!s124 OEM10U2 
+!s124 OEM10U9 
 !s135 nogc
 o-quiet -auto_acc_if_foreign -work work +acc
 tCvgOpt 0 defaultOptions 1107585188
-n@_opt
+n@_opt3
 OL;O;2025.2;82
+vmBCDdig
+2mBCDdig.v
+!s110 1791844250
+!i10b 1
+!s100 lT]@I=4bi6_AQPdSkYTlP3
+I8Td?ZY:PLfPKRAE8g^i<V1
+R2
+w1791843015
+8mBCDdig.v
+FmBCDdig.v
+!i122 8
+L0 1 190
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OL;L;2025.2;82
+r1
+!s85 0
+31
+!s108 1791844250.000000
+!s107 mBCDdig.v|
+!s90 -reportprogress|300|mBCDdig.v|
+!i113 0
+Z5 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 tCvgOpt 0 defaultOptions 1085333592
+nm@b@c@ddig
 vmUnitCounter
 2mUnitCounter.v
-Z3 !s110 1791840420
+Z7 !s110 1791840420
 !i10b 1
 !s100 S8]eMIai0UZk1j7DfSF041
 I9aMFmKD27ZL7>X_?`?_6_1
@@ -43,21 +69,45 @@ w1791831012
 FmUnitCounter.v
 !i122 6
 L0 2 108
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-Z5 OL;L;2025.2;82
+R3
+R4
 r1
 !s85 0
 31
-Z6 !s108 1791840420.000000
+Z8 !s108 1791840420.000000
 !s107 mUnitCounter.v|
 !s90 -reportprogress|300|mUnitCounter.v|
 !i113 0
-Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z8 tCvgOpt 0 defaultOptions 1085333592
+R5
+R6
 nm@unit@counter
+vtb_mBCDdig
+2tbBCDdig.v
+!s110 1791844256
+!i10b 1
+!s100 QY?@YQlYTGYYA?]jMO6od2
+IUe^jA9M[=hHS3VLCG4jE?1
+R2
+w1791843542
+8tbBCDdig.v
+FtbBCDdig.v
+!i122 9
+L0 3 81
+R3
+R4
+r1
+!s85 0
+31
+!s108 1791844256.000000
+!s107 tbBCDdig.v|
+!s90 -reportprogress|300|tbBCDdig.v|
+!i113 0
+R5
+R6
+ntb_m@b@c@ddig
 vtbUnitCounter
 2tbUnitCounter.v
-R3
+R7
 !i10b 1
 !s100 >6jP:::z03VV<eW=ZT<8i2
 I8OadVmNL_ao0TT43SRKNh2
@@ -67,15 +117,15 @@ w1791840023
 FtbUnitCounter.v
 !i122 7
 L0 3 95
+R3
 R4
-R5
 r1
 !s85 0
 31
-R6
+R8
 !s107 tbUnitCounter.v|
 !s90 -reportprogress|300|tbUnitCounter.v|
 !i113 0
-R7
-R8
+R5
+R6
 ntb@unit@counter

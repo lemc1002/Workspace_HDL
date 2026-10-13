@@ -1,6 +1,6 @@
 module mBCDdig
 #(
-	parameter PRESCALER_MAX = 500_000
+	parameter PRESCALER_MAX = 499_999
 )
 (
 	input iClk,

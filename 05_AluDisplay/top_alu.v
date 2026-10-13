@@ -109,7 +109,6 @@ module top_alu
 	assign HEX4[6:0] = wvHex4; //7seg-display off
 	assign HEX5[6:0] = wNegative? 7'b011_1111:7'b111_1111;
 
-	
 	assign wvDataA = SW[NUM_BITS*0 +:NUM_BITS];
 	assign wvDataB = SW[NUM_BITS*1 +:NUM_BITS];
 	assign LEDR[9] = wOvf;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for stopwatch
-Mon Oct 12 15:23:42 2026
+Tue Oct 13 13:33:17 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -14,10 +14,20 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |mUnitCounter
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |tmStopwatch
+ 10. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst
+ 11. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins
+ 12. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones
+ 13. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mH_Tens
+ 14. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mS_Ones
+ 15. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens
+ 16. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mM_Ones
+ 17. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens
+ 18. Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens"
+ 19. Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -44,14 +54,14 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Oct 12 15:23:42 2026           ;
+; Analysis & Synthesis Status     ; Successful - Tue Oct 13 13:33:17 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; stopwatch                                       ;
-; Top-level Entity Name           ; mUnitCounter                                    ;
+; Top-level Entity Name           ; tmStopwatch                                     ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 4                                               ;
-; Total pins                      ; 9                                               ;
+; Total registers                 ; 44                                              ;
+; Total pins                      ; 67                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
 ; Total DSP Blocks                ; 0                                               ;
@@ -70,7 +80,7 @@ on the Quartus Prime software download page.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
-; Top-level entity name                                                           ; mUnitCounter       ; stopwatch          ;
+; Top-level entity name                                                           ; tmStopwatch        ; stopwatch          ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Maximum processors allowed for parallel compilation                             ; All                ;                    ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -169,49 +179,66 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                  ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                    ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
-; designFiles/mUnitCounter.v       ; yes             ; User Verilog HDL File  ; C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mUnitCounter.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
+; designFiles/mSevenSegDisp.v      ; yes             ; User Verilog HDL File  ; C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mSevenSegDisp.v ;         ;
+; designFiles/tmStopwatch.v        ; yes             ; User Verilog HDL File  ; C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v   ;         ;
+; designFiles/mUnitCounter.v       ; yes             ; User Verilog HDL File  ; C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mUnitCounter.v  ;         ;
+; designFiles/mBCDdig.v            ; yes             ; User Verilog HDL File  ; C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v       ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 3         ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 5         ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 1         ;
-;     -- 5 input functions                    ; 4         ;
-;     -- 4 input functions                    ; 0         ;
-;     -- <=3 input functions                  ; 0         ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 4         ;
-;                                             ;           ;
-; I/O pins                                    ; 9         ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; rCnt_q[0] ;
-; Maximum fan-out                             ; 6         ;
-; Total fan-out                               ; 56        ;
-; Average fan-out                             ; 2.07      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 55             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 106            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 4              ;
+;     -- 5 input functions                    ; 33             ;
+;     -- 4 input functions                    ; 48             ;
+;     -- <=3 input functions                  ; 21             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 44             ;
+;                                             ;                ;
+; I/O pins                                    ; 67             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 44             ;
+; Total fan-out                               ; 727            ;
+; Average fan-out                             ; 2.56           ;
++---------------------------------------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
-; |mUnitCounter              ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 9    ; 0            ; |mUnitCounter       ; mUnitCounter ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Entity Name   ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+---------------+--------------+
+; |tmStopwatch                        ; 106 (0)             ; 44 (0)                    ; 0                 ; 0          ; 67   ; 0            ; |tmStopwatch                                                  ; tmStopwatch   ; work         ;
+;    |mBCDdig:mBCDdig_inst|           ; 64 (0)              ; 44 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst                             ; mBCDdig       ; work         ;
+;       |mUnitCounter:mH_Ones|        ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones        ; mUnitCounter  ; work         ;
+;       |mUnitCounter:mH_Tens|        ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mH_Tens        ; mUnitCounter  ; work         ;
+;       |mUnitCounter:mM_Ones|        ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mM_Ones        ; mUnitCounter  ; work         ;
+;       |mUnitCounter:mM_Tens|        ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens        ; mUnitCounter  ; work         ;
+;       |mUnitCounter:mPrescaler_ins| ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins ; mUnitCounter  ; work         ;
+;       |mUnitCounter:mS_Ones|        ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Ones        ; mUnitCounter  ; work         ;
+;       |mUnitCounter:mS_Tens|        ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens        ; mUnitCounter  ; work         ;
+;    |mSevenSegDisp:m7segA|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mSevenSegDisp:m7segA                             ; mSevenSegDisp ; work         ;
+;    |mSevenSegDisp:m7segDT|          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mSevenSegDisp:m7segDT                            ; mSevenSegDisp ; work         ;
+;    |mSevenSegDisp:m7segD|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mSevenSegDisp:m7segD                             ; mSevenSegDisp ; work         ;
+;    |mSevenSegDisp:m7segH|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mSevenSegDisp:m7segH                             ; mSevenSegDisp ; work         ;
+;    |mSevenSegDisp:m7segT|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mSevenSegDisp:m7segT                             ; mSevenSegDisp ; work         ;
+;    |mSevenSegDisp:m7segU|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mSevenSegDisp:m7segU                             ; mSevenSegDisp ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -220,25 +247,133 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 44    ;
+; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Clear ; 44    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Clock Enable       ; 44    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |mUnitCounter ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; CNT_SIZE       ; 4     ; Signed Integer                                      ;
-; MAX_CNT        ; 1001  ; Unsigned Binary                                     ;
-+----------------+-------+-----------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |tmStopwatch ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; CNT_SIZE       ; 4     ; Signed Integer                                     ;
+; MAX_CNT        ; 9     ; Signed Integer                                     ;
+; NUM_DISP       ; 6     ; Signed Integer                                     ;
+; NUM_BITS       ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst ;
++----------------+--------+-----------------------------------------+
+; Parameter Name ; Value  ; Type                                    ;
++----------------+--------+-----------------------------------------+
+; PRESCALER_MAX  ; 499999 ; Signed Integer                          ;
++----------------+--------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins ;
++----------------+--------+---------------------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                                ;
++----------------+--------+---------------------------------------------------------------------+
+; CNT_SIZE       ; 20     ; Signed Integer                                                      ;
+; MAX_CNT        ; 499999 ; Signed Integer                                                      ;
++----------------+--------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; CNT_SIZE       ; 4     ; Signed Integer                                                ;
+; MAX_CNT        ; 9     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mH_Tens ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; CNT_SIZE       ; 4     ; Signed Integer                                                ;
+; MAX_CNT        ; 9     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mS_Ones ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; CNT_SIZE       ; 4     ; Signed Integer                                                ;
+; MAX_CNT        ; 9     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; CNT_SIZE       ; 4     ; Signed Integer                                                ;
+; MAX_CNT        ; 5     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mM_Ones ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; CNT_SIZE       ; 4     ; Signed Integer                                                ;
+; MAX_CNT        ; 9     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; CNT_SIZE       ; 4     ; Signed Integer                                                ;
+; MAX_CNT        ; 5     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens"                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; oMaxHit ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins" ;
++---------+--------+----------+------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                        ;
++---------+--------+----------+------------------------------------------------+
+; iUpDown ; Input  ; Info     ; Stuck at VCC                                   ;
+; ovCnt   ; Output ; Info     ; Explicitly unconnected                         ;
++---------+--------+----------+------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -246,16 +381,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 4                           ;
-;     ENA CLR           ; 4                           ;
-; arriav_lcell_comb     ; 5                           ;
-;     normal            ; 5                           ;
-;         5 data inputs ; 4                           ;
-;         6 data inputs ; 1                           ;
-; boundary_port         ; 9                           ;
+; arriav_ff             ; 44                          ;
+;     ENA CLR           ; 24                          ;
+;     ENA CLR SCLR      ; 20                          ;
+; arriav_lcell_comb     ; 114                         ;
+;     arith             ; 20                          ;
+;         1 data inputs ; 20                          ;
+;     normal            ; 94                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 1                           ;
+;         4 data inputs ; 48                          ;
+;         5 data inputs ; 33                          ;
+;         6 data inputs ; 4                           ;
+; boundary_port         ; 67                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.85                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.91                        ;
 +-----------------------+-----------------------------+
 
 
@@ -274,27 +416,64 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Mon Oct 12 15:23:35 2026
+    Info: Processing started: Tue Oct 13 13:33:07 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stopwatch -c stopwatch
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file designfiles/msevensegdisp.v
+    Info (12023): Found entity 1: mSevenSegDisp File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mSevenSegDisp.v Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file designfiles/mbin2bcd.v
+    Info (12023): Found entity 1: mbin2bcd File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mbin2bcd.v Line: 184
 Info (12021): Found 1 design units, including 1 entities, in source file designfiles/tmstopwatch.v
     Info (12023): Found entity 1: tmStopwatch File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file designfiles/munitcounter.v
     Info (12023): Found entity 1: mUnitCounter File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mUnitCounter.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file designfiles/mucnt_baseline.v
     Info (12023): Found entity 1: mUcnt_baseline File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mUcnt_baseline.v Line: 1
-Info (12127): Elaborating entity "mUnitCounter" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file designfiles/mbcddig.v
+    Info (12023): Found entity 1: mBCDdig File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file designfiles/tbbcddig.v
+    Info (12023): Found entity 1: tb_mBCDdig File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tbBCDdig.v Line: 3
+Info (12127): Elaborating entity "tmStopwatch" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at tmStopwatch.v(38): object "wvMode" assigned a value but never read File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 38
+Info (12128): Elaborating entity "mBCDdig" for hierarchy "mBCDdig:mBCDdig_inst" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 104
+Info (12128): Elaborating entity "mUnitCounter" for hierarchy "mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 82
+Info (12128): Elaborating entity "mUnitCounter" for hierarchy "mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 99
+Info (12128): Elaborating entity "mUnitCounter" for hierarchy "mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 152
+Info (12128): Elaborating entity "mSevenSegDisp" for hierarchy "mSevenSegDisp:m7segU" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 114
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[1]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[4]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[5]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[8]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[9]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 14 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 5 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 14
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 14
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 14
+Info (21057): Implemented 173 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 106 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
     Info: Peak virtual memory: 4853 megabytes
-    Info: Processing ended: Mon Oct 12 15:23:42 2026
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Processing ended: Tue Oct 13 13:33:17 2026
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:26
 
 

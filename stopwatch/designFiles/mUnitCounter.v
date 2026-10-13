@@ -41,7 +41,6 @@ assign oMaxHit = iEnable && ( (iUpDown  && (rCnt_q == MAX_CNT)) ||
 										(!iUpDown && (rCnt_q == {CNT_SIZE{1'b0}}) )
 									 );
 
-
 //********************************************************************
 //                    Sequential logic section
 //	(registered output) Reg (left side) (blocking = and non blocking <=)

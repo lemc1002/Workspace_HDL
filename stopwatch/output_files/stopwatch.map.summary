@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon Oct 12 15:23:42 2026
+Analysis & Synthesis Status : Successful - Tue Oct 13 13:33:17 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : stopwatch
-Top-level Entity Name : mUnitCounter
+Top-level Entity Name : tmStopwatch
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 4
-Total pins : 9
+Total registers : 44
+Total pins : 67
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

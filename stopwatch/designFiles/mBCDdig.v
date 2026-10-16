@@ -7,6 +7,8 @@ module mBCDdig
 	input inRst,
 	input iEnable,
 	input iUpDown,
+	input iLoadMode,
+	input [23:0] ivLoadData,
 	
 	// Counter BCD Outputs
     output	[3:0]	ovHOnes,	// Hundredths ones (0.01s)
@@ -77,6 +79,8 @@ module mBCDdig
         .inRst   (inRst),
         .iEnable (iEnable),
         .iUpDown (1'b1),
+		  .iLoadMode	(1'b0),
+		  .ivLoadData	(20'b0),
         .ovCnt   (),
         .oMaxHit (wTick100Hz)
     );
@@ -94,6 +98,8 @@ module mBCDdig
         .inRst   (inRst),
         .iEnable (wTick100Hz),
         .iUpDown (iUpDown),
+		  .iLoadMode	(1'b0),
+		  .ivLoadData	(4'b0),
         .ovCnt   (ovHOnes),
         .oMaxHit (wHit_H_Ones)
     );
@@ -112,6 +118,8 @@ module mBCDdig
         .inRst   (inRst),
         .iEnable (wHit_H_Ones),
         .iUpDown (iUpDown),
+		  .iLoadMode	(1'b0),
+		  .ivLoadData	(4'b0),
         .ovCnt   (ovHTens),
         .oMaxHit (wHit_H_Tens)
     );
@@ -129,6 +137,8 @@ module mBCDdig
         .inRst   (inRst),
         .iEnable (wHit_H_Tens),
         .iUpDown (iUpDown),
+		  .iLoadMode	(iLoadMode),
+		  .ivLoadData	(ivLoadData[3:0]),
         .ovCnt   (ovSOnes),
         .oMaxHit (wHit_S_Ones)
     );
@@ -147,6 +157,8 @@ module mBCDdig
         .inRst   (inRst),
         .iEnable (wHit_S_Ones),
         .iUpDown (iUpDown),
+		  .iLoadMode	(iLoadMode),
+		  .ivLoadData	(ivLoadData[7:4]),
         .ovCnt   (ovSTens),
         .oMaxHit (wHit_S_Tens)
     );
@@ -165,6 +177,8 @@ module mBCDdig
         .inRst   (inRst),
         .iEnable (wHit_S_Tens),
         .iUpDown (iUpDown),
+		  .iLoadMode	(iLoadMode),
+		  .ivLoadData	(ivLoadData[11:8]),
         .ovCnt   (ovMOnes),
         .oMaxHit (wHit_M_Ones)
     );
@@ -183,6 +197,8 @@ module mBCDdig
         .inRst   (inRst),
         .iEnable (wHit_M_Ones),
         .iUpDown (iUpDown),
+		  .iLoadMode	(iLoadMode),
+		  .ivLoadData	(ivLoadData[15:12]),
         .ovCnt   (ovMTens),
         .oMaxHit (wHit_M_Tens)
     );	 

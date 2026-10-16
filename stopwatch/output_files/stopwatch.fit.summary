@@ -1,11 +1,11 @@
-Fitter Status : Successful - Tue Oct 13 13:33:58 2026
+Fitter Status : Successful - Tue Oct 13 18:52:21 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : stopwatch
 Top-level Entity Name : tmStopwatch
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 56 / 41,910 ( < 1 % )
+Logic utilization (in ALMs) : 67 / 41,910 ( < 1 % )
 Total registers : 44
 Total pins : 67 / 499 ( 13 % )
 Total virtual pins : 0

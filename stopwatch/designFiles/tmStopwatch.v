@@ -95,6 +95,8 @@ module tmStopwatch
         .inRst   (KEY[0]),   // KEY[0] pressed = 0 (Active-Low Reset)
         .iEnable (SW[0]),    // SW[0] UP = Run/Enable, DOWN = Pause
         .iUpDown (SW[1]),    // SW[1] UP = Count UP, DOWN = Count DOWN
+		  .iLoadMode (SW[2]),
+		  .ivLoadData (24'h17_37_25),
         .ovHOnes (wvHOnes),  // 0.01s digit
         .ovHTens (wvHTens),  // 0.1s  digit
         .ovSOnes (wvSOnes),  // 1s    digit

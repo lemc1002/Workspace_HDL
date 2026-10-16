@@ -9,6 +9,8 @@ module mUnitCounter
     input  wire                  inRst,
     input  wire                  iEnable,
     input  wire                  iUpDown,
+	 input								iLoadMode,
+	 input		 [CNT_SIZE-1:0]	ivLoadData,
     output wire [CNT_SIZE-1:0]   ovCnt,
     output wire                  oMaxHit
 );
@@ -37,9 +39,9 @@ reg [CNT_SIZE-1:0] rCnt_q;
 //********************************************************************
 
 assign ovCnt = rCnt_q;
-assign oMaxHit = iEnable && ( (iUpDown  && (rCnt_q == MAX_CNT)) || 
-										(!iUpDown && (rCnt_q == {CNT_SIZE{1'b0}}) )
-									 );
+assign oMaxHit = !iLoadMode && iEnable && (	(iUpDown  && (rCnt_q == MAX_CNT)) || 
+															(!iUpDown && (rCnt_q == {CNT_SIZE{1'b0}}) )
+														);
 
 //********************************************************************
 //                    Sequential logic section
@@ -65,10 +67,16 @@ end//always seq
 //
 always @(*)
 begin
+	// Default assignment: hold current state (prevents latches)
 	rCnt_d = rCnt_q;
-	if(iEnable)
-	begin
 	
+	if(iLoadMode)
+	begin
+		// Priority 1: Parallel Load Data
+		rCnt_d = ivLoadData;
+	end 
+	else if(iEnable)
+	begin
 		if(iUpDown)
 		begin
 			if(rCnt_q >=MAX_CNT)

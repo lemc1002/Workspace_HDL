@@ -1,5 +1,5 @@
 Analysis & Synthesis report for stopwatch
-Tue Oct 13 18:51:28 2026
+Sat Oct 17 17:51:29 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -13,22 +13,22 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |tmStopwatch
- 11. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst
- 12. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins
- 13. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones
- 14. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mH_Tens
- 15. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mS_Ones
- 16. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens
- 17. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mM_Ones
- 18. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens
- 19. Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens"
- 20. Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mH_Tens"
- 21. Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones"
- 22. Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins"
- 23. Port Connectivity Checks: "mBCDdig:mBCDdig_inst"
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |tmStopwatch
+ 12. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst
+ 13. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins
+ 14. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones
+ 15. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mH_Tens
+ 16. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mS_Ones
+ 17. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens
+ 18. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mM_Ones
+ 19. Parameter Settings for User Entity Instance: mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens
+ 20. Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens"
+ 21. Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mH_Tens"
+ 22. Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones"
+ 23. Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins"
  24. Post-Synthesis Netlist Statistics for Top Partition
  25. Elapsed Time Per Partition
  26. Analysis & Synthesis Messages
@@ -58,13 +58,13 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Oct 13 18:51:28 2026           ;
+; Analysis & Synthesis Status     ; Successful - Sat Oct 17 17:51:29 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; stopwatch                                       ;
 ; Top-level Entity Name           ; tmStopwatch                                     ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 44                                              ;
+; Total registers                 ; 59                                              ;
 ; Total pins                      ; 67                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
@@ -192,6 +192,7 @@ on the Quartus Prime software download page.
 ; designFiles/tmStopwatch.v        ; yes             ; User Verilog HDL File  ; C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v   ;         ;
 ; designFiles/mUnitCounter.v       ; yes             ; User Verilog HDL File  ; C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mUnitCounter.v  ;         ;
 ; designFiles/mBCDdig.v            ; yes             ; User Verilog HDL File  ; C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v       ;         ;
+; designFiles/mSetCommands.v       ; yes             ; User Verilog HDL File  ; C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mSetCommands.v  ;         ;
 +----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
 
 
@@ -200,25 +201,25 @@ on the Quartus Prime software download page.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 66             ;
+; Estimate of Logic utilization (ALMs needed) ; 71             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 116            ;
-;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 16             ;
-;     -- 5 input functions                    ; 29             ;
-;     -- 4 input functions                    ; 49             ;
-;     -- <=3 input functions                  ; 22             ;
+; Combinational ALUT usage for logic          ; 128            ;
+;     -- 7 input functions                    ; 2              ;
+;     -- 6 input functions                    ; 11             ;
+;     -- 5 input functions                    ; 30             ;
+;     -- 4 input functions                    ; 60             ;
+;     -- <=3 input functions                  ; 25             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 44             ;
+; Dedicated logic registers                   ; 59             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 67             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 44             ;
-; Total fan-out                               ; 788            ;
-; Average fan-out                             ; 2.68           ;
+; Maximum fan-out                             ; 59             ;
+; Total fan-out                               ; 905            ;
+; Average fan-out                             ; 2.82           ;
 +---------------------------------------------+----------------+
 
 
@@ -227,15 +228,16 @@ on the Quartus Prime software download page.
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Entity Name   ; Library Name ;
 +-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------+---------------+--------------+
-; |tmStopwatch                        ; 116 (0)             ; 44 (0)                    ; 0                 ; 0          ; 67   ; 0            ; |tmStopwatch                                                  ; tmStopwatch   ; work         ;
-;    |mBCDdig:mBCDdig_inst|           ; 74 (0)              ; 44 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst                             ; mBCDdig       ; work         ;
-;       |mUnitCounter:mH_Ones|        ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones        ; mUnitCounter  ; work         ;
-;       |mUnitCounter:mH_Tens|        ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mH_Tens        ; mUnitCounter  ; work         ;
+; |tmStopwatch                        ; 128 (0)             ; 59 (0)                    ; 0                 ; 0          ; 67   ; 0            ; |tmStopwatch                                                  ; tmStopwatch   ; work         ;
+;    |SetCommands:u_SetCommands|      ; 10 (10)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|SetCommands:u_SetCommands                        ; SetCommands   ; work         ;
+;    |mBCDdig:mBCDdig_inst|           ; 76 (7)              ; 45 (1)                    ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst                             ; mBCDdig       ; work         ;
+;       |mUnitCounter:mH_Ones|        ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones        ; mUnitCounter  ; work         ;
+;       |mUnitCounter:mH_Tens|        ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mH_Tens        ; mUnitCounter  ; work         ;
 ;       |mUnitCounter:mM_Ones|        ; 8 (8)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mM_Ones        ; mUnitCounter  ; work         ;
-;       |mUnitCounter:mM_Tens|        ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens        ; mUnitCounter  ; work         ;
+;       |mUnitCounter:mM_Tens|        ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens        ; mUnitCounter  ; work         ;
 ;       |mUnitCounter:mPrescaler_ins| ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins ; mUnitCounter  ; work         ;
-;       |mUnitCounter:mS_Ones|        ; 9 (9)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Ones        ; mUnitCounter  ; work         ;
-;       |mUnitCounter:mS_Tens|        ; 9 (9)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens        ; mUnitCounter  ; work         ;
+;       |mUnitCounter:mS_Ones|        ; 8 (8)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Ones        ; mUnitCounter  ; work         ;
+;       |mUnitCounter:mS_Tens|        ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens        ; mUnitCounter  ; work         ;
 ;    |mSevenSegDisp:m7segA|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mSevenSegDisp:m7segA                             ; mSevenSegDisp ; work         ;
 ;    |mSevenSegDisp:m7segDT|          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mSevenSegDisp:m7segDT                            ; mSevenSegDisp ; work         ;
 ;    |mSevenSegDisp:m7segD|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |tmStopwatch|mSevenSegDisp:m7segD                             ; mSevenSegDisp ; work         ;
@@ -246,17 +248,28 @@ on the Quartus Prime software download page.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; SetCommands:u_SetCommands|rdigtTS_q[3] ; Stuck at GND due to stuck port data_in ;
+; SetCommands:u_SetCommands|rdigtTM_q[3] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2  ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 44    ;
-; Number of registers using Synchronous Clear  ; 28    ;
-; Number of registers using Synchronous Load   ; 4     ;
-; Number of registers using Asynchronous Clear ; 44    ;
+; Total registers                              ; 59    ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 59    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 35    ;
+; Number of registers using Clock Enable       ; 58    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -266,8 +279,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens|rCnt_q[2] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Ones|rCnt_q[1] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Ones|rCnt_q[0] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens|rCnt_q[3] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens|rCnt_q[0] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mM_Ones|rCnt_q[2] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mM_Ones|rCnt_q[3] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens|rCnt_q[3] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |tmStopwatch|mBCDdig:mBCDdig_inst|mUnitCounter:mM_Tens|rCnt_q[2] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 
 
@@ -382,22 +401,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-----------------------------------------------------------------------+
 ; Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mH_Tens" ;
-+------------+-------+----------+---------------------------------------+
-; Port       ; Type  ; Severity ; Details                               ;
-+------------+-------+----------+---------------------------------------+
-; iLoadMode  ; Input ; Info     ; Stuck at GND                          ;
-; ivLoadData ; Input ; Info     ; Stuck at GND                          ;
-+------------+-------+----------+---------------------------------------+
++------------------+-------+----------+---------------------------------+
+; Port             ; Type  ; Severity ; Details                         ;
++------------------+-------+----------+---------------------------------+
+; iLoadMode        ; Input ; Info     ; Stuck at GND                    ;
+; ivLoadData[2..1] ; Input ; Info     ; Stuck at GND                    ;
+; ivLoadData[3]    ; Input ; Info     ; Stuck at VCC                    ;
+; ivLoadData[0]    ; Input ; Info     ; Stuck at VCC                    ;
++------------------+-------+----------+---------------------------------+
 
 
 +-----------------------------------------------------------------------+
 ; Port Connectivity Checks: "mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones" ;
-+------------+-------+----------+---------------------------------------+
-; Port       ; Type  ; Severity ; Details                               ;
-+------------+-------+----------+---------------------------------------+
-; iLoadMode  ; Input ; Info     ; Stuck at GND                          ;
-; ivLoadData ; Input ; Info     ; Stuck at GND                          ;
-+------------+-------+----------+---------------------------------------+
++------------------+-------+----------+---------------------------------+
+; Port             ; Type  ; Severity ; Details                         ;
++------------------+-------+----------+---------------------------------+
+; iLoadMode        ; Input ; Info     ; Stuck at GND                    ;
+; ivLoadData[2..1] ; Input ; Info     ; Stuck at GND                    ;
+; ivLoadData[3]    ; Input ; Info     ; Stuck at VCC                    ;
+; ivLoadData[0]    ; Input ; Info     ; Stuck at VCC                    ;
++------------------+-------+----------+---------------------------------+
 
 
 +------------------------------------------------------------------------------+
@@ -412,53 +435,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+---------------------------------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "mBCDdig:mBCDdig_inst"     ;
-+--------------------+-------+----------+--------------+
-; Port               ; Type  ; Severity ; Details      ;
-+--------------------+-------+----------+--------------+
-; ivLoadData[18..16] ; Input ; Info     ; Stuck at VCC ;
-; ivLoadData[13..12] ; Input ; Info     ; Stuck at VCC ;
-; ivLoadData[10..8]  ; Input ; Info     ; Stuck at VCC ;
-; ivLoadData[23..21] ; Input ; Info     ; Stuck at GND ;
-; ivLoadData[15..14] ; Input ; Info     ; Stuck at GND ;
-; ivLoadData[7..6]   ; Input ; Info     ; Stuck at GND ;
-; ivLoadData[4..3]   ; Input ; Info     ; Stuck at GND ;
-; ivLoadData[20]     ; Input ; Info     ; Stuck at VCC ;
-; ivLoadData[19]     ; Input ; Info     ; Stuck at GND ;
-; ivLoadData[11]     ; Input ; Info     ; Stuck at GND ;
-; ivLoadData[5]      ; Input ; Info     ; Stuck at VCC ;
-; ivLoadData[2]      ; Input ; Info     ; Stuck at VCC ;
-; ivLoadData[1]      ; Input ; Info     ; Stuck at GND ;
-; ivLoadData[0]      ; Input ; Info     ; Stuck at VCC ;
-+--------------------+-------+----------+--------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 44                          ;
-;     CLR               ; 2                           ;
-;     CLR SCLR          ; 3                           ;
-;     CLR SLD           ; 4                           ;
-;     ENA CLR           ; 10                          ;
-;     ENA CLR SCLR      ; 25                          ;
-; arriav_lcell_comb     ; 124                         ;
+; arriav_ff             ; 59                          ;
+;     CLR               ; 1                           ;
+;     ENA CLR           ; 30                          ;
+;     ENA CLR SCLR      ; 20                          ;
+;     ENA CLR SLD       ; 8                           ;
+; arriav_lcell_comb     ; 135                         ;
 ;     arith             ; 20                          ;
 ;         1 data inputs ; 20                          ;
-;     normal            ; 104                         ;
-;         0 data inputs ; 2                           ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 113                         ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 2                           ;
-;         4 data inputs ; 49                          ;
-;         5 data inputs ; 29                          ;
-;         6 data inputs ; 16                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 60                          ;
+;         5 data inputs ; 30                          ;
+;         6 data inputs ; 11                          ;
 ; boundary_port         ; 67                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.26                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.92                        ;
 +-----------------------+-----------------------------+
 
 
@@ -467,7 +470,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -477,7 +480,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Tue Oct 13 18:51:11 2026
+    Info: Processing started: Sat Oct 17 17:51:22 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stopwatch -c stopwatch
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file designfiles/msevensegdisp.v
@@ -494,46 +497,39 @@ Info (12021): Found 1 design units, including 1 entities, in source file designf
     Info (12023): Found entity 1: mBCDdig File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file designfiles/tbbcddig.v
     Info (12023): Found entity 1: tb_mBCDdig File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tbBCDdig.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file designfiles/msetcommands.v
+    Info (12023): Found entity 1: SetCommands File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mSetCommands.v Line: 2
+Warning (10236): Verilog HDL Implicit Net warning at tmStopwatch.v(123): created implicit net for "oCDAlert" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 123
 Info (12127): Elaborating entity "tmStopwatch" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at tmStopwatch.v(38): object "wvMode" assigned a value but never read File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 38
-Info (12128): Elaborating entity "mBCDdig" for hierarchy "mBCDdig:mBCDdig_inst" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 106
-Info (12128): Elaborating entity "mUnitCounter" for hierarchy "mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 86
-Info (12128): Elaborating entity "mUnitCounter" for hierarchy "mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 105
-Info (12128): Elaborating entity "mUnitCounter" for hierarchy "mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 164
-Info (12128): Elaborating entity "mSevenSegDisp" for hierarchy "mSevenSegDisp:m7segU" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 116
+Info (12128): Elaborating entity "SetCommands" for hierarchy "SetCommands:u_SetCommands" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 98
+Info (12128): Elaborating entity "mBCDdig" for hierarchy "mBCDdig:mBCDdig_inst" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 124
+Info (12128): Elaborating entity "mUnitCounter" for hierarchy "mBCDdig:mBCDdig_inst|mUnitCounter:mPrescaler_ins" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 109
+Info (12128): Elaborating entity "mUnitCounter" for hierarchy "mBCDdig:mBCDdig_inst|mUnitCounter:mH_Ones" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 128
+Info (12128): Elaborating entity "mUnitCounter" for hierarchy "mBCDdig:mBCDdig_inst|mUnitCounter:mS_Tens" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/mBCDdig.v Line: 187
+Info (12128): Elaborating entity "mSevenSegDisp" for hierarchy "mSevenSegDisp:m7segU" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 134
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
-    Warning (13410): Pin "LEDR[1]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
     Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
-    Warning (13410): Pin "LEDR[4]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
-    Warning (13410): Pin "LEDR[5]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
     Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
-    Warning (13410): Pin "LEDR[8]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
-    Warning (13410): Pin "LEDR[9]" is stuck at VCC File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 15
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 10 input pin(s) that do not drive logic
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[3]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 13
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 14
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 14
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/altera_ws/Workspace_HDL/stopwatch/designFiles/tmStopwatch.v Line: 14
-Info (21057): Implemented 183 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 209 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 116 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info (21061): Implemented 142 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
     Info: Peak virtual memory: 4853 megabytes
-    Info: Processing ended: Tue Oct 13 18:51:28 2026
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:40
+    Info: Processing ended: Sat Oct 17 17:51:29 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:17
 
 

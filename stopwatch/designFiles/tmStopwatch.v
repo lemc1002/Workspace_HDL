@@ -50,7 +50,9 @@ module tmStopwatch
     wire [3:0] wvSTens;
     wire [3:0] wvMOnes;
     wire [3:0] wvMTens;
-	
+	 
+	 wire [23:0]	wvSetLoadData;
+
 //********************************************************************
 //                    Generate Section
 //********************************************************************
@@ -66,7 +68,7 @@ module tmStopwatch
 	assign HEX5[6:0] = wvHex5;
 
 	assign wvMode = SW[3:2];
-	assign LEDR[9:0] = 10'b11_0011_0011;
+	assign LEDR[9:0] = oCDAlert? 10'b10_1010_1010:10'b0;
 	
 //********************************************************************
 //                    Sequential logic section
@@ -83,6 +85,21 @@ module tmStopwatch
 //                    module instantiation section
 //********************************************************************
 // -------------------------------------------------------------------
+// Instantiate Command Decoder
+// -------------------------------------------------------------------
+SetCommands u_SetCommands (
+    .iClk        (CLOCK_50),
+    .inRst       (KEY[0]),
+    .iEnable     (~SW[0]),
+    .iLoadMode   (SW[2]),
+    .ivLoadData  (SW[7:4]),       // 4-bit BCD digit value from switches
+    .ivDigitSel  (SW[9:8]),       // 2-bit digit selector (00=US, 01=TS, 10=UM, 11=TM)
+    .ovLoadData  (wvSetLoadData)  // Output packed 16-bit BCD bus [15:0]
+);
+
+
+
+// -------------------------------------------------------------------
 // 1. 6-Digit Cascaded BCD Stopwatch Counter
 // -------------------------------------------------------------------
     mBCDdig
@@ -96,13 +113,14 @@ module tmStopwatch
         .iEnable (SW[0]),    // SW[0] UP = Run/Enable, DOWN = Pause
         .iUpDown (SW[1]),    // SW[1] UP = Count UP, DOWN = Count DOWN
 		  .iLoadMode (SW[2]),
-		  .ivLoadData (24'h17_37_25),
+		  .ivLoadData (wvSetLoadData),    // Aligns MM:SS to [23:8] and sets hundredths to .00
         .ovHOnes (wvHOnes),  // 0.01s digit
         .ovHTens (wvHTens),  // 0.1s  digit
         .ovSOnes (wvSOnes),  // 1s    digit
         .ovSTens (wvSTens),  // 10s   digit
         .ovMOnes (wvMOnes),  // 1m    digit
-        .ovMTens (wvMTens)   // 10m   digit
+        .ovMTens (wvMTens),   // 10m   digit
+		  .oCDAlert(oCDAlert)
     );
 // Correct named parameter override
 

@@ -16,7 +16,9 @@ module mBCDdig
     output	[3:0]	ovSOnes,	// Seconds ones    (1s)
     output	[3:0]	ovSTens,	// Seconds tens    (10s)
     output	[3:0]	ovMOnes,	// Minutes ones    (1min)
-	 output	[3:0]	ovMTens	// Minutes ones    (10min)
+	 output	[3:0]	ovMTens,	// Minutes ones    (10min)
+	 
+	 output			oCDAlert
 	
 );
 
@@ -41,6 +43,12 @@ module mBCDdig
     wire wHit_M_Ones;
 	 wire wHit_M_Tens;
 
+	 // Unary NOR reduction: 1 when ALL 6 digits equal 0
+    wire wZeroDetected = ~|{ovMTens, ovMOnes, ovSTens, ovSOnes, ovHTens, ovHOnes};
+	 
+	 reg rZDAlert_d;
+	 reg rZDAlert_q;
+
 //********************************************************************
 //                    Generate Section
 //********************************************************************
@@ -48,13 +56,28 @@ module mBCDdig
 //********************************************************************
 //                    Continious Assignment
 //********************************************************************
-
+assign oCDAlert = rZDAlert_q;
 
 //********************************************************************
 //                    Sequential logic section
 //	(registered output) Reg (left side) (blocking = and non blocking <=)
 //********************************************************************
-
+always @(posedge iClk or negedge inRst) 
+begin
+	if (!inRst) begin
+		rZDAlert_q <= 1'b0;
+	end else begin
+	if (iLoadMode) begin
+		rZDAlert_q <= 1'b0; // Clear alert when loading a new preset
+		end else if (!iUpDown && wZeroDetected && iEnable) begin
+			rZDAlert_q <= 1'b1; // Latch alert when countdown hits 00:00.00
+		end
+		// 2. Stop Alert when ovSOnes hits 6 (after 4 seconds of countdown rollover)
+	  if (rZDAlert_q && (ovSOnes == 4'd6)) begin
+			rZDAlert_q <= 1'b0;
+	  end
+	end
+end//sequential always
 
 //********************************************************************
 //                    Combinatory logic section
@@ -99,7 +122,7 @@ module mBCDdig
         .iEnable (wTick100Hz),
         .iUpDown (iUpDown),
 		  .iLoadMode	(1'b0),
-		  .ivLoadData	(4'b0),
+		  .ivLoadData	(4'b1001),
         .ovCnt   (ovHOnes),
         .oMaxHit (wHit_H_Ones)
     );
@@ -119,7 +142,7 @@ module mBCDdig
         .iEnable (wHit_H_Ones),
         .iUpDown (iUpDown),
 		  .iLoadMode	(1'b0),
-		  .ivLoadData	(4'b0),
+		  .ivLoadData	(4'b1001),
         .ovCnt   (ovHTens),
         .oMaxHit (wHit_H_Tens)
     );
@@ -138,7 +161,7 @@ module mBCDdig
         .iEnable (wHit_H_Tens),
         .iUpDown (iUpDown),
 		  .iLoadMode	(iLoadMode),
-		  .ivLoadData	(ivLoadData[3:0]),
+		  .ivLoadData	(ivLoadData[11:8]),
         .ovCnt   (ovSOnes),
         .oMaxHit (wHit_S_Ones)
     );
@@ -158,7 +181,7 @@ module mBCDdig
         .iEnable (wHit_S_Ones),
         .iUpDown (iUpDown),
 		  .iLoadMode	(iLoadMode),
-		  .ivLoadData	(ivLoadData[7:4]),
+		  .ivLoadData	(ivLoadData[15:12]),
         .ovCnt   (ovSTens),
         .oMaxHit (wHit_S_Tens)
     );
@@ -178,7 +201,7 @@ module mBCDdig
         .iEnable (wHit_S_Tens),
         .iUpDown (iUpDown),
 		  .iLoadMode	(iLoadMode),
-		  .ivLoadData	(ivLoadData[11:8]),
+		  .ivLoadData	(ivLoadData[19:16]),
         .ovCnt   (ovMOnes),
         .oMaxHit (wHit_M_Ones)
     );
@@ -198,7 +221,7 @@ module mBCDdig
         .iEnable (wHit_M_Ones),
         .iUpDown (iUpDown),
 		  .iLoadMode	(iLoadMode),
-		  .ivLoadData	(ivLoadData[15:12]),
+		  .ivLoadData	(ivLoadData[23:20]),
         .ovCnt   (ovMTens),
         .oMaxHit (wHit_M_Tens)
     );	 

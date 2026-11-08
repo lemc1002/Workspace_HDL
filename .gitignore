@@ -1,7 +1,7 @@
-/stopwatch/incremental_db
-/stopwatch/db
-/stopwatch/output_files
-/stopwatch/simulation
-/stopwatch/designFiles/work
+*/incremental_db
+*/db
+*/output_files
+*/simulation
+*/designFiles/work
 *.bak
-/stopwatch/designFiles/work
+*/designFiles/work
